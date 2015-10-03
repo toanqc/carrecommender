@@ -1,2 +1,2 @@
-# carrecommendation
+# Car Recommender System
 This is the academic project for course CS522-BigData
