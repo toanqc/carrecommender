@@ -31,8 +31,9 @@ V. Personalization
 	or IP Address.
 
 VI. Interface
-Input:  
-Search criteria (car make/model/year)
+
+	Input:  
+	Search criteria (car make/model/year)
 
 	Output:
 	Car Recommendation with rental availability (Hotwire) and video thumbnails (YouTube)
