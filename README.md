@@ -3,8 +3,8 @@ This is the academic project for course CS522-BigData
 
 Team Members:
 
+Toan Quach,
 Hiep Nguyen, 
-Toan Quach, 
 Mark Pit
 
 I. Domain
