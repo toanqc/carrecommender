@@ -9,7 +9,7 @@ Mark Pit
 
 I. Domain
 
-	Recommend top cars based on customer ratings from Edmunds.com 
+	Recommend top cars based on customer ratings, prices consiting of Rental fee, MSPR, Factory Invoice and Market price, car type and customer's behaviours from Edmunds.com 
 
 II. Purpose
 
@@ -43,4 +43,5 @@ VI. Interface
 
 	Output:
 	Car Recommendation with rental availability (Hotwire) and video links (YouTube)
+	Car recommendation as the same types watched which is to maximize benefits for customers.
 
