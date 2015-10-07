@@ -1,412 +1,172 @@
-ILX
-MDX
-RDX
-RLX
-TLX
-4C
-"V12 Vantage S"
-A3
-A4
-A5
-A6
-A7
-A8
-Q3
-Q5
-Q7
-R8
-"RS 5"
-"RS 7"
-S3
-S4
-S5
-S6
-S7
-S8
-SQ5
-TT
-TTS
-allroad
-"2 Series"
-"3 Series"
-"3 Series Gran Turismo"
-"4 Series"
-"4 Series Gran Coupe"
-"5 Series"
-"5 Series Gran Turismo"
-"6 Series"
-"6 Series Gran Coupe"
-"7 Series"
-"ALPINA B6 Gran Coupe"
-"ALPINA B7"
-"ActiveHybrid 5"
-"ActiveHybrid 7"
-M3
-M4
-M5
-M6
-"M6 Gran Coupe"
-X1
-X3
-X4
-X5
-"X5 M"
-X6
-"X6 M"
-Z4
-i3
-i8
-"Continental GT"
-"Flying Spur"
-Mulsanne
-Enclave
-Encore
-LaCrosse
-Regal
-Verano
-ATS
-"ATS Coupe"
-CTS
-"CTS-V Coupe"
-Escalade
-"Escalade ESV"
-SRX
-XTS
-Camaro
-"City Express"
-Colorado
-Corvette
-Cruze
-Equinox
-Express
-"Express Cargo"
-Impala
-Malibu
-SS
-"Silverado 1500"
-"Silverado 2500HD"
-"Silverado 3500HD"
-Sonic
-Spark
-"Spark EV"
-Suburban
-Tahoe
-Traverse
-Trax
-Volt
-200
-300
-"Town and Country"
-Challenger
-Charger
-Dart
-Durango
-"Grand Caravan"
-Journey
-Viper
-500
-500L
-500e
-"458 Italia"
-"California T"
-"F12 Berlinetta"
-FF
-"C-Max Energi"
-"C-Max Hybrid"
-Edge
-Escape
-Expedition
-Explorer
-F-150
-"F-250 Super Duty"
-"F-350 Super Duty"
-"F-450 Super Duty"
-Fiesta
-Flex
-Focus
-"Focus ST"
-Fusion
-"Fusion Energi"
-"Fusion Hybrid"
-Mustang
-Taurus
-"Transit Connect"
-"Transit Van"
-"Transit Wagon"
-Acadia
-Canyon
-Savana
-"Savana Cargo"
-"Sierra 1500"
-"Sierra 2500HD"
-"Sierra 3500HD"
-Terrain
-Yukon
-"Yukon XL"
-Accord
-"Accord Hybrid"
-CR-V
-CR-Z
-Civic
-Crosstour
-Fit
-Odyssey
-Pilot
-Accent
-Azera
-Elantra
-"Elantra GT"
-Equus
-Genesis
-"Genesis Coupe"
-"Santa Fe"
-"Santa Fe Sport"
-Sonata
-"Sonata Hybrid"
-Tucson
-Veloster
-Q40
-Q50
-"Q60 Convertible"
-"Q60 Coupe"
-Q70
-QX50
-QX60
-QX70
-QX80
-F-TYPE
-XF
-XJ
-XK
-Cherokee
-Compass
-"Grand Cherokee"
-"Grand Cherokee SRT"
-Patriot
-Renegade
-Wrangler
-Cadenza
-Forte
-K900
-Optima
-"Optima Hybrid"
-Rio
-Sedona
-Sorento
-Soul
-"Soul EV"
-Sportage
-Aventador
-Huracan
-"Discovery Sport"
-LR2
-LR4
-"Range Rover"
-"Range Rover Evoque"
-"Range Rover Sport"
-"CT 200h"
-"ES 300h"
-"ES 350"
-"GS 350"
-"GS 450h"
-"GX 460"
-"IS 250"
-"IS 250 C"
-"IS 350"
-"IS 350 C"
-"LS 460"
-"LS 600h L"
-"LX 570"
-"NX 200t"
-"NX 300h"
-"RC 350"
-"RC F"
-"RX 350"
-"RX 450h"
-MKC
-MKS
-MKT
-MKX
-MKZ
-Navigator
-Cooper
-"Cooper Countryman"
-"Cooper Coupe"
-"Cooper Paceman"
-"Cooper Roadster"
-Ghibli
-GranTurismo
-"GranTurismo Convertible"
-Quattroporte
-3
-5
-6
-CX-5
-CX-9
-"MX-5 Miata"
-"650S Coupe"
-"650S Spider"
-"B-Class Electric Drive"
-C-Class
-CLA-Class
-CLS-Class
-E-Class
-G-Class
-GL-Class
-GLA-Class
-GLK-Class
-M-Class
-S-Class
-SL-Class
-SLK-Class
-"SLS AMG GT Final Edition"
-Sprinter
-Lancer
-"Lancer Evolution"
-Mirage
-Outlander
-"Outlander Sport"
-370Z
-Altima
-Armada
-Frontier
-GT-R
-Juke
-Leaf
-Murano
-"NV Cargo"
-"NV Passenger"
-NV200
-Pathfinder
-Quest
-Rogue
-"Rogue Select"
-Sentra
-Titan
-Versa
-"Versa Note"
-Xterra
-911
-"918 Spyder"
-Boxster
-Cayenne
-Cayman
-Macan
-Panamera
-1500
-2500
-3500
-"CV Tradesman"
-"Promaster Cargo Van"
-"Promaster City"
-"Promaster Window Van"
-"Ghost Series II"
-Phantom
-"Phantom Coupe"
-"Phantom Drophead Coupe"
-Wraith
-FR-S
-iQ
-tC
-xB
-BRZ
-Forester
-Impreza
-Legacy
-Outback
-WRX
-"XV Crosstrek"
-"Model S"
-4Runner
-Avalon
-"Avalon Hybrid"
-Camry
-"Camry Hybrid"
-Corolla
-Highlander
-"Highlander Hybrid"
-"Land Cruiser"
-Prius
-"Prius Plug-in"
-"Prius c"
-"Prius v"
-RAV4
-Sequoia
-Sienna
-Tacoma
-Tundra
-Venza
-Yaris
-Beetle
-"Beetle Convertible"
-CC
-Eos
-Golf
-"Golf GTI"
-"Golf R"
-"Golf SportWagen"
-Jetta
-Passat
-Tiguan
-Touareg
-e-Golf
-S60
-S80
-V60
-"V60 Cross Country"
-XC60
-XC70
-fortwo
-"ILX Hybrid"
-TL
-TSX
-"TSX Sport Wagon"
-DB9
-"Rapide S"
-"V8 Vantage"
-Vanquish
-"Continental GT Speed"
-"Continental GT Speed Convertible"
-"Continental GTC"
-"CTS Coupe"
-"CTS Wagon"
-CTS-V
-"CTS-V Wagon"
-ELR
-"Captiva Sport"
-"Corvette Stingray"
-"Impala Limited"
-Avenger
-"SRT Viper"
-California
-"E-Series Van"
-"E-Series Wagon"
-"Shelby GT500"
-"Accord Plug-In Hybrid"
-"Fit EV"
-Insight
-Ridgeline
-"Elantra Coupe"
-Gallardo
-"IS F"
-Evora
-"Cooper Clubman"
-2
-CL-Class
-"SLS AMG GT"
-"Lancer Sportback"
-i-MiEV
-Cube
-Maxima
-"Murano CrossCabriolet"
-Ghost
-xD
-"Impreza WRX"
-Tribeca
-"FJ Cruiser"
-"RAV4 EV"
-GTI
-"Jetta GLI"
-"Jetta Hybrid"
-"Jetta SportWagen"
-XC90
+Acura,"TLX Sedan"
+"Alfa Romeo","4C Coupe"
+Audi,"A3 Sedan"
+Audi,"A4 Sedan"
+Audi,"A5 Coupe"
+Audi,"A6 Sedan"
+Audi,"A7 Sedan"
+Audi,"Q3 SUV"
+Audi,"Q5 SUV"
+Audi,"Q7 Diesel"
+Audi,"S3 Sedan"
+Audi,"S4 Sedan"
+Audi,"S5 Coupe"
+Audi,"S8 Sedan"
+Audi,"SQ5 SUV"
+BMW,"2 Series Coupe"
+BMW,"2 Series Convertible"
+BMW,"3 Series Sedan"
+BMW,"3 Series Gran Turismo Hatchback"
+BMW,"4 Series Coupe"
+BMW,"4 Series Gran Coupe Sedan"
+BMW,"5 Series Diesel"
+BMW,"7 Series Sedan"
+BMW,"7 Series Diesel"
+BMW,"M4 Coupe"
+BMW,"X3 SUV"
+BMW,"X4 SUV"
+BMW,"X6 SUV"
+BMW,"i3 Hatchback"
+Bentley,"Flying Spur Sedan"
+Cadillac,"Escalade SUV"
+Chevrolet,"City Express Minivan"
+Chevrolet,"Colorado Crew Cab"
+Chevrolet,"Corvette Z06"
+Chevrolet,"Corvette Convertible"
+Chevrolet,"Corvette Coupe"
+Chevrolet,"Cruze Diesel"
+Chevrolet,"Impala Sedan"
+Chevrolet,"Silverado 1500 Crew Cab"
+Chevrolet,"Silverado 2500HD Crew Cab"
+Chevrolet,"Suburban SUV"
+Chevrolet,"Tahoe SUV"
+Chevrolet,"Trax SUV"
+Chrysler,"200 Sedan"
+Chrysler,"300 Sedan"
+Chrysler,"Town and Country Minivan"
+Dodge,"Challenger Coupe"
+Dodge,"Charger Sedan"
+Dodge,"Charger SRT Hellcat"
+Dodge,"Dart Sedan"
+Dodge,"Durango SUV"
+Dodge,"Grand Caravan Minivan"
+Dodge,"Journey SUV"
+Dodge,"Viper Coupe"
+FIAT,"500 Convertible"
+FIAT,"500L Wagon"
+Ford,"Escape SUV"
+Ford,"Explorer SUV"
+Ford,"F-150 SuperCrew"
+Ford,"F-150 SuperCab"
+Ford,"F-250 Super Duty Crew Cab"
+Ford,"F-350 Super Duty Crew Cab"
+Ford,"F-450 Super Duty Crew Cab"
+Ford,"Fiesta Sedan"
+Ford,"Focus Sedan"
+Ford,"Focus ST Hatchback"
+Ford,"Mustang Coupe"
+Ford,"Mustang Convertible"
+GMC,"Canyon Crew Cab"
+GMC,"Yukon XL SUV"
+Honda,"CR-V SUV"
+Honda,"Civic Sedan"
+Honda,"Civic Coupe"
+Honda,"Civic Si"
+Honda,"Crosstour Hatchback"
+Honda,"Fit Hatchback"
+Honda,"Odyssey Minivan"
+Hyundai,"Elantra Sedan"
+Hyundai,"Equus Sedan"
+Hyundai,"Genesis Sedan"
+Hyundai,"Santa Fe Sport SUV"
+Hyundai,"Sonata Sedan"
+Hyundai,"Tucson SUV"
+Infiniti,"Q50 Sedan"
+Infiniti,"Q50 Hybrid"
+Infiniti,"Q70 Sedan"
+Infiniti,"QX80 SUV"
+Jaguar,"F-TYPE Coupe"
+Jaguar,"XF Sedan"
+Jaguar,"XJ Sedan"
+Jeep,"Compass SUV"
+Jeep,"Grand Cherokee SUV"
+Jeep,"Patriot SUV"
+Jeep,"Renegade SUV"
+Jeep,"Wrangler SUV"
+Kia,"Forte Koup"
+Kia,"K900 Sedan"
+Kia,"Sedona Minivan"
+Kia,"Sorento SUV"
+Kia,"Soul EV Wagon"
+Kia,"Sportage SUV"
+"Land Rover","Discovery Sport SUV"
+"Land Rover","LR4 SUV"
+"Land Rover","Range Rover Evoque SUV"
+"Land Rover","Range Rover Sport SUV"
+Lexus,"CT 200h Hatchback"
+Lexus,"IS 350 Sedan"
+Lexus,"NX 200t SUV"
+Lexus,"NX 300h SUV"
+Lexus,"RC 350 Coupe"
+Lexus,"RC F Coupe"
+Lexus,"RX 450h SUV"
+Lincoln,"MKC SUV"
+Lincoln,"MKZ Sedan"
+Lincoln,"MKZ Hybrid"
+Lincoln,"Navigator SUV"
+MINI,"Cooper Hatchback"
+Mazda,"CX-5 SUV"
+Mazda,"MX-5 Miata Convertible"
+Mercedes-Benz,"C-Class Sedan"
+Mercedes-Benz,"CLA-Class CLA45 AMG"
+Mercedes-Benz,"CLS-Class Sedan"
+Mercedes-Benz,"E-Class Sedan"
+Mercedes-Benz,"E-Class Convertible"
+Mercedes-Benz,"GLA-Class SUV"
+Mercedes-Benz,"S-Class S63 AMG 4MATIC"
+Mercedes-Benz,"S-Class Sedan"
+Mercedes-Benz,"S-Class Coupe"
+Mitsubishi,"Mirage Hatchback"
+Mitsubishi,"Outlander Sport SUV"
+Nissan,"GT-R Coupe"
+Nissan,"Murano SUV"
+Nissan,"NV200 Minivan"
+Nissan,"Rogue SUV"
+Porsche,"911 Convertible"
+Porsche,"911 Coupe"
+Porsche,"Boxster Convertible"
+Porsche,"Cayenne SUV"
+Porsche,"Macan SUV"
+Porsche,"Panamera Sedan"
+Porsche,"Panamera Hybrid"
+Ram,"1500 Crew Cab"
+Ram,"2500 Crew Cab"
+Scion,"tC Hatchback"
+Subaru,"Legacy Sedan"
+Subaru,"Outback Wagon"
+Subaru,"WRX STI Launch Edition"
+Subaru,"WRX Sedan"
+Subaru,"WRX STI"
+Subaru,"XV Crosstrek Hybrid"
+Tesla,"Model S Sedan"
+Toyota,"4Runner SUV"
+Toyota,"Camry Sedan"
+Toyota,"Camry Hybrid Sedan"
+Toyota,"Highlander SUV"
+Toyota,"Highlander Hybrid SUV"
+Toyota,"Land Cruiser SUV"
+Toyota,"Prius Hatchback"
+Toyota,"Prius v Wagon"
+Toyota,"Tundra CrewMax Cab"
+Toyota,"Yaris Hatchback"
+Volkswagen,"Beetle Convertible"
+Volkswagen,"Golf Hatchback"
+Volkswagen,"Golf Diesel"
+Volkswagen,"Golf GTI Hatchback"
+Volkswagen,"Passat Sedan"
+Volkswagen,"Touareg SUV"
+Volkswagen,"e-Golf Hatchback"
+Volvo,"S60 Sedan"
+Volvo,"V60 Wagon"
+Volvo,"V60 Cross Country Wagon"
+Volvo,"XC60 SUV"
