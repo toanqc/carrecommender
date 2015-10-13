@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>  
+    <session-factory>
+        <!-- Basic -->
+        <!-- Database Dialect & Driver -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        
+        <!-- Database Details-->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/iselect?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">123456</property>
+        
+        <!-- Additional Properties -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">false</property>
+        <!--
+        <property name="hbm2ddl.auto">create</property>
+        -->
+        <!-- C3P0 -->
+        <property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.min_size">7</property>
+        <property name="hibernate.c3p0.max_size">53</property>
+        <property name="hibernate.c3p0.timeout">100</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">1000</property>
+        <property name="hibernate.c3p0.validate">true</property>
+        
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+    </session-factory>
+</hibernate-configuration>
