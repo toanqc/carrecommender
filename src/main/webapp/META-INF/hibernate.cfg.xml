@@ -10,9 +10,9 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         
         <!-- Database Details-->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/iselect?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/carrecommender</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.connection.password">root</property>
         
         <!-- Additional Properties -->
         <property name="show_sql">true</property>

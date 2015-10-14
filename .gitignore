@@ -6,3 +6,4 @@ bin/*
 /bin/
 target/*
 /target/
+nb-configuration.xml
