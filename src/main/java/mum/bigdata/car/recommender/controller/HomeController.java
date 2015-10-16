@@ -1,7 +1,6 @@
 package mum.bigdata.car.recommender.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +23,5 @@ public class HomeController {
 
 		return "search";
 	}
-
 
 }
