@@ -1,0 +1,116 @@
+* {
+	margin: 0px;
+}
+
+body {
+	height: 100%;
+	font-family: 'Open Sans', open-sans, Arial, 'Helvetica Neue', sans-serif;
+	font-size: 13px;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+.header-container {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 980px;
+	height: 50px;
+}
+
+.header-left {
+	float: left;
+}
+
+.header-right {
+	float: right;
+}
+
+.search-container {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 165px;
+}
+
+.search-container .header-text {
+	font-size: 50px;
+	text-align: center;
+}
+
+.search-container .header-text sub {
+	font-size: 9px;
+	vertical-align: super;
+}
+
+.search-container .type-search-container {
+	text-align: center;
+	margin-top: 15px;
+}
+
+.search-container .type-search-container li {
+	display: inline-block;
+	margin-right: -4px;
+	width: 150px;
+	height: 30px;
+	padding-top: 10px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.search-container .type-search-container li:last-child {
+	border-right: 1px solid black;
+}
+
+.search-container .search-box-container {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.search-container .search-box-container div {
+	display: inline-block;
+}
+
+.search-container .search-box-container div .eg-make {
+	margin-left: -55px;
+}
+
+.search-container .search-box-container div .eg-model {
+	margin-left: -175px;
+}
+
+.search-container .search-box-container select {
+	width: 120px;
+}
+
+.model-box {
+}
+
+.model-box select {
+	width: 250px !important;
+}
+
+.search-container .button-container {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.search-container .button-container .go-button {
+	margin-top: -35px;
+	margin-left: 690px;
+}
+
+.search-container .button-container button {
+	font-size: 14px;
+	font-weight: 400;
+	width: 45px;
+	height: 40px;
+	border-radius: 5px;
+	border-style: none;
+	background: none repeat scroll 0 0 #0072BC;
+	color: #fff;
+	cursor: pointer;
+}
