@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `table 3`
 --
 
-CREATE TABLE IF NOT EXISTS `table 3` (
+CREATE TABLE IF NOT EXISTS `model` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `make` varchar(20) NOT NULL,
   `model` varchar(50) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `table 3` (
 -- Dumping data for table `table 3`
 --
 
-INSERT INTO `table 3` (`id`, `make`, `model`) VALUES
+INSERT INTO `model` (`id`, `make`, `model`) VALUES
 (1, 'Acura', 'TLX Sedan'),
 (2, 'Alfa Romeo', '4C Coupe'),
 (3, 'Audi', 'A3 Sedan'),
