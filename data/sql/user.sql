@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2015 at 10:15 AM
+-- Generation Time: Oct 16, 2015 at 11:55 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -17,28 +17,24 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `test`
+-- Database: `carrecommender`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `year`
+-- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `year` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `year` char(4) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `username` varchar(15) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `facebook_id` int(11) DEFAULT NULL,
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `year`
---
-
-INSERT INTO `year` (`id`, `year`) VALUES
-(1, 2015),
-(2, 2014);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

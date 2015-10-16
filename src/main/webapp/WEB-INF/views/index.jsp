@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
 <title>Car Recommender</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
