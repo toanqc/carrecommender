@@ -2,7 +2,7 @@ package mum.bigdata.car.recommender.model;
 
 public class User {
 
-	private String facebookId;
+	private String id;
 
 	private String name;
 
@@ -12,25 +12,25 @@ public class User {
 		// default constructor
 	}
 
-	public User(String facebookId, String name, String email) {
-		this.facebookId = facebookId;
+	public User(String id, String name, String email) {
+		this.id = id;
 		this.name = name;
 		this.email = email;
 	}
 
 	/**
-	 * @return the facebookId
+	 * @return the id
 	 */
-	public String getFacebookId() {
-		return facebookId;
+	public String getId() {
+		return id;
 	}
 
 	/**
-	 * @param facebookId
-	 *            the facebookId to set
+	 * @param id
+	 *            the id to set
 	 */
-	public void setFacebookId(String facebookId) {
-		this.facebookId = facebookId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**
