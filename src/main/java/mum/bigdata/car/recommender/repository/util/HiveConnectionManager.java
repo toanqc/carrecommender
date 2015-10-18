@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import com.bigdata.car.recommender.util.PropertiesUtil;
+import mum.bigdata.car.recommender.util.PropertiesUtil;
 
 /**
  * @author Toan Quach

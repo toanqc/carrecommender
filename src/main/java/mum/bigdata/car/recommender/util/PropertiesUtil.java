@@ -1,4 +1,4 @@
-package com.bigdata.car.recommender.util;
+package mum.bigdata.car.recommender.util;
 
 import java.io.IOException;
 import java.io.InputStream;
