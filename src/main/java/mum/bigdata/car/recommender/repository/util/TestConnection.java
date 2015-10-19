@@ -12,7 +12,7 @@ import java.sql.Statement;
  */
 public class TestConnection {
 	HiveConnectionManager cm = HiveConnectionManager.getInstance();
-	private static final String readquery = "SELECT * FROM geolocation";
+	private static final String readquery = "SELECT * FROM `user`";
 
 	public void testConnection() throws SQLException {
 		Connection con = cm.getConnection();
@@ -22,8 +22,8 @@ public class TestConnection {
 		// Perform SELECT
 		ResultSet rs = stmt.executeQuery(readquery);
 		while (rs.next()) {
-			String id = rs.getString("geolocation.truckid").trim();
-			String city = rs.getString("geolocation.city").trim();
+			String id = rs.getString("user.id").trim();
+			String city = rs.getString("user.name").trim();
 			System.out.println("id = " + id + " city = " + city);
 		}
 		// close Statement object; do not re-use

@@ -4,15 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import javax.servlet.http.HttpServletRequest;
+import mum.bigdata.car.recommender.model.Car;
 import mum.bigdata.car.recommender.model.Make;
 import mum.bigdata.car.recommender.model.Model;
+import mum.bigdata.car.recommender.service.CarService;
+import mum.bigdata.car.recommender.service.MakeService;
+import mum.bigdata.car.recommender.service.ModelService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class CarController {
 
+    @Autowired
+    private MakeService makeService;
+    
+    @Autowired
+    private ModelService modelService;
+    
+    @Autowired
+    private CarService carService;
+    
     @RequestMapping(value = "route", method = RequestMethod.GET)
     public String router(HttpServletRequest request) {
         // This is the central location for all links to be tracked
@@ -33,36 +48,28 @@ public class CarController {
 
     @RequestMapping(value="makes")
     public @ResponseBody List<Make> getMakes(HttpServletRequest request){
-        
-        List<Make> makes = new ArrayList<>();
-        makes.add(new Make(1,"Acura"));
-        makes.add(new Make(2,"Alfa Romeo"));
-        makes.add(new Make(3,"Audi"));
-        makes.add(new Make(4,"BMW"));
-        makes.add(new Make(5,"Bentley"));
-        makes.add(new Make(6,"Buick"));
-
-        return makes;
+        return makeService.getMakes();
     }
     
     @RequestMapping(value="models")
-    public @ResponseBody List<Model> getModels(HttpServletRequest request){
-        
-        List<Model> models = new ArrayList<>();
-        models.add(new Model(3, "A3 Sedan"));
-        models.add(new Model(5,"11A5 Coupe"));
-
-        return models;
+    public @ResponseBody List<Model> getModels(@RequestParam("make") String makeName){
+        return modelService.getModels(makeName);
     }
     
     @RequestMapping(value="years")
     public @ResponseBody List<Model> getYears(HttpServletRequest request){
         
         List<Model> models = new ArrayList<>();
-        models.add(new Model(1, "2015"));
         models.add(new Model(2,"2016"));
+        models.add(new Model(1, "2015"));
+        models.add(new Model(1, "2014"));
 
         return models;
+    }
+    
+    @RequestMapping(value="searchCar")
+    public @ResponseBody List<Car> getCars(@RequestParam("make") String makeName, @RequestParam("model") String modelName, @RequestParam("year") String year){
+        return carService.getCars(makeName, modelName, year);
     }
     
     private ArrayList<Integer> getRecommendations(int userId){

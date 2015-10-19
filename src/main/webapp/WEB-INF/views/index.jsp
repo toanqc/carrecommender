@@ -58,10 +58,11 @@
                 </div>
                 <div class="button-container">
                     <div class="go-button">
-                        <button>Go</button>
+                        <button id="search">Go</button>
                     </div>
                 </div>
             </div>
+            <div name="cars"></div>
         </div>
         <script type="text/javascript">
             $(function () {
@@ -76,8 +77,9 @@
             });
 
             $('#makes').on('change', function () {
+                var makeId = $( "#makes option:selected").text();
                 var items = "";
-                $.getJSON("models", function (data) {
+                $.getJSON("models?make="+makeId, function (data) {
                     items += "<option value=''>-- Select Model --</option>";
                     $.each(data, function (index, item) {
                         items += "<option value='" + item.id + "'>" + item.name + "</option>";
@@ -94,6 +96,19 @@
                         items += "<option value='" + item.id + "'>" + item.name + "</option>";
                     });
                     $("#years").html(items);
+                });
+            });
+            
+            $('#search').on('click', function () {
+                var makeName = $( "#makes option:selected").text();
+                var modelName = $( "#models option:selected").text();
+                var year = $( "#years option:selected").text();
+                var items = "";
+                $.getJSON("searchCar?make="+makeName+"&model="+modelName+"&year="+year, function (data) {
+                    $.each(data, function (index, item) {
+                        items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                    });
+                    $("#cars").html(items);
                 });
             });
 
