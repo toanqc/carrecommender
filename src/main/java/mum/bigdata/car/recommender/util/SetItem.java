@@ -1,15 +1,15 @@
 package mum.bigdata.car.recommender.util;
 
 public class SetItem {
-	private int item;
+	private String item;
 	private int count;
 	
-	public SetItem(int item, int count){
+	public SetItem(String item, int count){
 		this.item = item;
 		this.count = count;
 	}
 	
-	public int getItem(){
+	public String getItem(){
 		return item;
 	}
 	

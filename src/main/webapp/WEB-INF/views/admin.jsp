@@ -8,10 +8,10 @@
 </head>
 <body>
 	<p>For testing purposes </p>
-	<p>Input: comma separated car id , Output: recommendation list</p>
+	<p>Input: userId (i.e. 10206909610532827, 1076887648990784), Output: recommendation list</p>
 	
 	<form action="rec" method="POST">
-		<input name="input" value=""/>
+		<input name="userId" value=""/>
 		<input type="submit" value="Get Recommendations" />
 	</form>
 
@@ -25,7 +25,7 @@
 	<hr>
 		
 	<p>
-		Enter user id (i.e. 10206909610532827) and car id (200703618, 200703609) to simulate user click.
+		Enter user id (i.e. 10206909610532827, 1076887648990784) and car id (200703618, 200703609) to simulate user click.
 	</p>
 	
 	<form action="carclick" method="POST">

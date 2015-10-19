@@ -10,46 +10,45 @@ import java.util.*;
 public class Apriori {
 
     public static void main(String[] args) throws Exception {
-    	List<int[]> data = new ArrayList<int[]>();
+    	List<List<String>> data = new ArrayList<List<String>>();
     	
-    	data.add(new int[]{3,2,1,3,4});  	
-    	data.add(new int[]{1,9,3,4,7,3,2,5});  
-    	data.add(new int[]{7,3,4,5,6,1,2});  
+    	data.add(Arrays.asList(new String[]{"5","2","1","9","4","3","12"}));  
+    	data.add(Arrays.asList(new String[]{"7","3","4","5","6","1","2"}));  
     	
         Apriori ap = new Apriori(data, 1);
-        ArrayList<Integer> resultSet = ap.getItemSet();
+        ArrayList<String> resultSet = ap.getItemSet();
         System.out.println(Arrays.deepToString(resultSet.toArray()));
         System.out.println(QueryHelper.formatToLikeQuery(resultSet, "cartrace"));
     }
 
-    private List<int[]> dataSet;
+    private List<List<String>> dataSet;
     private double minSup; 
  
-    public  Apriori(List<int[]> data, int s){
+    public  Apriori(List<List<String>> data, int s){
     	dataSet = data;  
     	minSup = s;  	
     }
 
-    public ArrayList<Integer> getItemSet(){
+    public ArrayList<String> getItemSet(){
         ArrayList<SetItem> resultSet = calculateFrequentItemsets(createList());
         return getSortedSet(resultSet);
     }    
     
-	public ArrayList<Integer> createList() {
-    	ArrayList<Integer> items = new ArrayList<Integer>();
+	public ArrayList<String> createList() {
+    	ArrayList<String> items = new ArrayList<String>();
     
     	for(int i = 0; i < dataSet.size(); i++){
-    		int[] row = dataSet.get(i);
+    		List<String> row = dataSet.get(i);
     		
-    		for(int j = 0; j < row.length; j++){
-				items.add(row[j]);
+    		for(int j = 0; j < row.size(); j++){
+				items.add(row.get(j));
     		}
     	}  
 
     	return items;
 	}	
 		
-	public ArrayList<SetItem> calculateFrequentItemsets(ArrayList<Integer> set){
+	public ArrayList<SetItem> calculateFrequentItemsets(ArrayList<String> set){
 		ArrayList<SetItem> resultSet = new ArrayList<SetItem>();
 		int count, i, j;
 		int size = set.size();
@@ -62,7 +61,7 @@ public class Apriori {
 		for(i = 0; i < size; i++){
 			count = 0;	
 			
-			int item = set.get(i);
+			String item = set.get(i);
 			count++;
 
 			for(j = i+1; j < size; j++){
@@ -89,9 +88,9 @@ public class Apriori {
 		return resultSet;
 	}
 	
-	public ArrayList<Integer> getSortedSet(ArrayList<SetItem> set){
+	public ArrayList<String> getSortedSet(ArrayList<SetItem> set){
 		Collections.sort(set, new MyComparator());   
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        ArrayList<String> result = new ArrayList<String>();
         
         for(SetItem t: set){
         	result.add(t.getItem());

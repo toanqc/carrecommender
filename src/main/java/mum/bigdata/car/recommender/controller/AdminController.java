@@ -14,11 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import mum.bigdata.car.recommender.model.Car;
 import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
 import mum.bigdata.car.recommender.util.Apriori;
 import mum.bigdata.car.recommender.util.QueryHelper;
 import mum.bigdata.car.recommender.util.SetItem;
+import mum.bigdata.car.recommender.util.Recommender;
 
 @Controller
 public class AdminController {
@@ -31,38 +32,31 @@ public class AdminController {
 
 	@RequestMapping(value = "rec", method = RequestMethod.POST)
 	public String recommendation(HttpServletRequest request, Model model){
-    	List<int[]> data = new ArrayList<int[]>();
-    	String list = new String();
-    	String query = new String();
+		ArrayList<Car> userRecommendations = new ArrayList<Car>();
+
+    	String userId = request.getParameter("userId");
+    	Recommender rec = new Recommender(userId);
+    	userRecommendations = rec.getRecommendation();
     	
-    	if( ! request.getParameter("input").isEmpty() ){  
-    		String[] st = request.getParameter("input").split("\\s*,\\s*");
-    		int[] t = new int[st.length];
-    		
-    		for(int i = 0; i < st.length; i++){
-    			t[i] = Integer.parseInt(st[i]);
-    		}
-    		data.add(t);
-    	}
-    	
-    	data.add(new int[]{200703618,200703609,200703608,200703614,200703615,200703610,200673635});  	
-    	data.add(new int[]{200673635,200703610,200703615,200703614,200722371,200703609,200703618,200708065});  
-    	data.add(new int[]{200703610,200703615,200703609,200708065,200703614,200673635,200703609});  
-    	data.add(new int[]{200703618,200708065,200703609,200722371,200673635,200703615,200703614});  
-    	
-    	try{
-    		Apriori ap = new Apriori(data, 3);
-    	    ArrayList<SetItem> set = ap.calculateFrequentItemsets(ap.createList());
-    		ArrayList<Integer> resultSet = ap.getSortedSet(set);
-    		list = Arrays.deepToString(resultSet.toArray());
-    		query = QueryHelper.formatToLikeQuery(resultSet, "cartrace");
-    	} catch (Exception e){
-    		System.out.println(e.getMessage());
-    	}
-    	
-    	model.addAttribute("output", list);
-    	model.addAttribute("query", "SELECT * FROM car WHERE " + query);
+    	model.addAttribute("data", userRecommendations);
 		return "admin";
+		
+//    	data.add(new int[]{200703618,200703609,200703608,200703614,200703615,200703610,200673635});  	
+//    	data.add(new int[]{200673635,200703610,200703615,200703614,200722371,200703609,200703618,200708065});  
+//    	data.add(new int[]{200703610,200703615,200703609,200708065,200703614,200673635,200703609});  
+//    	data.add(new int[]{200703618,200708065,200703609,200722371,200673635,200703615,200703614});  
+    	
+//    	try{
+//    		Apriori ap = new Apriori(data, 3);
+//    	    ArrayList<SetItem> set = ap.calculateFrequentItemsets(ap.createList());
+//    		ArrayList<Integer> resultSet = ap.getSortedSet(set);
+//    		list = Arrays.deepToString(resultSet.toArray());
+//    		query = QueryHelper.formatToLikeQuery(resultSet, "cartrace");
+//    	} catch (Exception e){
+//    		System.out.println(e.getMessage());
+//    	}
+//    	
+    	//model.addAttribute("output", list);		
 	}	
 	
 	@RequestMapping(value = "carclick", method = RequestMethod.POST)
