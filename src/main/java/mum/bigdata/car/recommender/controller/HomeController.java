@@ -17,19 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {	
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView getHome() throws SQLException {
-        List<Make> makes = new ArrayList<>();
-        makes.add(new Make(1, "Acura"));
-        makes.add(new Make(2, "Alfa Romeo"));
-        makes.add(new Make(3, "Audi"));
-        makes.add(new Make(4, "BMW"));
-        makes.add(new Make(5, "Bentley"));
-        makes.add(new Make(6, "Buick"));
-        
-        ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("makes", makes);
-
-        return modelAndView;
+    public String getHome() throws SQLException {
+        return "index";
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)

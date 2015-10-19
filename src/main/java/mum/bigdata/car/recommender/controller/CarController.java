@@ -55,4 +55,14 @@ public class CarController {
         return models;
     }
     
+    @RequestMapping(value="years")
+    public @ResponseBody List<Model> getYears(HttpServletRequest request){
+        
+        List<Model> models = new ArrayList<>();
+        models.add(new Model(1, "2015"));
+        models.add(new Model(2,"2016"));
+
+        return models;
+    }
+    
 }

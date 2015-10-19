@@ -51,7 +51,7 @@
                         </select> <br> <span class="eg-model">e.g. Maxima</span>
                     </div>
                     <div>
-                        <select name="model" id="model">
+                        <select name="years" id="years">
                             <option value="">&nbsp;Select Year&nbsp;</option>
                         </select> <br>&nbsp;
                     </div>
@@ -64,21 +64,39 @@
             </div>
         </div>
         <script type="text/javascript">
-            $("#makes").selectmenu({
-                    change:function (event, ui) {
-                    alert('An error occured');
-                    }
+            $(function () {
+                var items = "";
+                $.getJSON("makes", function (data) {
+                    items += "<option value=''>-- Select Make --</option>";
+                    $.each(data, function (index, item) {
+                        items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                    });
+                    $("#makes").html(items);
+                });
+            });
+
+            $('#makes').on('change', function () {
+                var items = "";
+                $.getJSON("models", function (data) {
+                    items += "<option value=''>-- Select Model --</option>";
+                    $.each(data, function (index, item) {
+                        items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                    });
+                    $("#models").html(items);
+                });
             });
             
-            $(function(){
-            var items = "";
-            $.getJSON("models", function(data){
-                $.each(data, function(index, item){
-                    items += "<option value='" + item.id + "'>" + item.name + "</option>";
-                });
-                $("#models").html(items);
+            $('#models').on('change', function () {
+                var items = "";
+                $.getJSON("years", function (data) {
+                    items += "<option value=''>-- Select Year --</option>";
+                    $.each(data, function (index, item) {
+                        items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                    });
+                    $("#years").html(items);
                 });
             });
+
         </script>
     </body>
 </html>
