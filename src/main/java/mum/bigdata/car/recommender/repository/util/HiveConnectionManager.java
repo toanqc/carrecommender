@@ -40,7 +40,10 @@ public class HiveConnectionManager {
 
 	public Connection getConnection() {
 		try {
+			Class.forName("org.apache.hive.jdbc.HiveDriver");
 			conn = DriverManager.getConnection(databaseUrl, user, pass);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
