@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.bigdata.car.recommender.util.Apriori;
 import mum.bigdata.car.recommender.util.QueryHelper;
+import mum.bigdata.car.recommender.util.SetItem;
 
 @Controller
 public class AdminController {
@@ -38,14 +39,15 @@ public class AdminController {
     		data.add(t);
     	}
     	
-    	data.add(new int[]{3,2,1,3,4});  	
-    	data.add(new int[]{1,9,3,4,7,3,2,5});  
-    	data.add(new int[]{7,3,4,5,6,1,2});  
+    	data.add(new int[]{200703618,200703609,200703608,200703614,200703615,200703610,200673635});  	
+    	data.add(new int[]{200673635,200703610,200703615,200703614,200722371,200703609,200703618,200708065});  
+    	data.add(new int[]{200703610,200703615,200703609,200708065,200703614,200673635,200703609});  
+    	data.add(new int[]{200703618,200708065,200703609,200722371,200673635,200703615,200703614});  
     	
     	try{
     		Apriori ap = new Apriori(data, 3);
-    		ArrayList<Integer> resultSet = ap.getItemSet();
-    		resultSet = ap.getItemSet();
+    	    ArrayList<SetItem> set = ap.calculateFrequentItemsets(ap.createList());
+    		ArrayList<Integer> resultSet = ap.getSortedSet(set);
     		list = Arrays.deepToString(resultSet.toArray());
     		query = QueryHelper.formatToLikeQuery(resultSet, "cartrace");
     	} catch (Exception e){
