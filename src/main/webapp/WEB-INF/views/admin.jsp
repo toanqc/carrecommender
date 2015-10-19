@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin</title>
+<title>Simulator</title>
 </head>
 <body>
 	<p>For testing purposes </p>
@@ -22,5 +22,22 @@
 			${query}
 		</p>
 	</c:if>
+	<hr>
+		
+	<p>
+		Enter user id (i.e. 10206909610532827) and car id (200703618, 200703609) to simulate user click.
+	</p>
+	
+	<form action="carclick" method="POST">
+		<input name="userId" value="10206909610532827"/>
+		<input name="carId" value="200703618"/>
+		<input type="submit" value="Click" />
+	</form>	
+	<c:if test="${not empty carTrace}">
+		<p>
+			Output: <br/>
+			${carTrace} <br/>
+		</p>
+	</c:if>	
 </body>
 </html>

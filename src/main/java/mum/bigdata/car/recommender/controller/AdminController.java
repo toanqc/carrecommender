@@ -1,5 +1,10 @@
 package mum.bigdata.car.recommender.controller;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
 import mum.bigdata.car.recommender.util.Apriori;
 import mum.bigdata.car.recommender.util.QueryHelper;
 import mum.bigdata.car.recommender.util.SetItem;
@@ -17,7 +23,7 @@ import mum.bigdata.car.recommender.util.SetItem;
 @Controller
 public class AdminController {
 	
-	@RequestMapping(value = "adm", method = RequestMethod.GET)
+	@RequestMapping(value = "simulator", method = RequestMethod.GET)
 	public String showMainPage(HttpServletRequest request){
 		
 		return "admin";
@@ -58,5 +64,26 @@ public class AdminController {
     	model.addAttribute("query", "SELECT * FROM car WHERE " + query);
 		return "admin";
 	}	
+	
+	@RequestMapping(value = "carclick", method = RequestMethod.POST)
+	public String saveCarClick(HttpServletRequest request, Model model){
+		String userId = request.getParameter("userId");
+		String carId = request.getParameter("carId");
+		HiveConnectionManager cm = HiveConnectionManager.getInstance();
+		
+		try (Connection conn = cm.getConnection()) {
+			String sql = "INSERT INTO `tracker`(userid, cartrace) VALUES(?, ?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			statement.setString(2, carId);
+			statement.executeUpdate();									
+			
+			model.addAttribute("carTrace", carId + " was stored successfully");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		return "admin";
+	}
 	
 }
