@@ -19,7 +19,7 @@ public class Apriori {
         Apriori ap = new Apriori(data, 1);
         ArrayList<Integer> resultSet = ap.getItemSet();
         System.out.println(Arrays.deepToString(resultSet.toArray()));
-        System.out.println(ap.formatToQuery(resultSet));
+        System.out.println(ap.formatToQuery(resultSet, "cartrace"));
     }
 
     private List<int[]> dataSet;
