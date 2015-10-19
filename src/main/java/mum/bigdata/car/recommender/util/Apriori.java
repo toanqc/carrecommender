@@ -19,7 +19,7 @@ public class Apriori {
         Apriori ap = new Apriori(data, 1);
         ArrayList<Integer> resultSet = ap.getItemSet();
         System.out.println(Arrays.deepToString(resultSet.toArray()));
-        System.out.println(ap.formatToQuery(resultSet, "cartrace"));
+        System.out.println(QueryHelper.formatToLikeQuery(resultSet, "cartrace"));
     }
 
     private List<int[]> dataSet;
@@ -35,12 +35,6 @@ public class Apriori {
         return getSortedSet(resultSet);
     }    
     
-    public String formatToQuery(ArrayList<Integer> set, String columnName){
-    	String cond = Arrays.deepToString(set.toArray());      
-    	cond = cond.replace(", ", ",%' OR " + columnName + " LIKE '%,").replace("[", columnName + " LIKE '%,").replace("]", ",%' ");
-        return cond;
-    }
-
 	private ArrayList<Integer> createList() {
     	ArrayList<Integer> items = new ArrayList<Integer>();
     
@@ -63,7 +57,7 @@ public class Apriori {
 		Collections.sort(set);
 		
 		//Debug
-		System.out.println(Arrays.deepToString(set.toArray()));
+		//System.out.println(Arrays.deepToString(set.toArray()));
 		
 		for(i = 0; i < size; i++){
 			count = 0;	
@@ -87,10 +81,10 @@ public class Apriori {
 		}
 		
 		//Debug
-        for(SetItem t: resultSet){
-        	System.out.print(t.getItem() + "=" + t.getCount() + ",");
-        }		
-        System.out.println();
+//        for(SetItem t: resultSet){
+//        	System.out.print(t.getItem() + "=" + t.getCount() + ",");
+//        }		
+//        System.out.println();
 		
 		return resultSet;
 	}
