@@ -11,9 +11,9 @@ package mum.bigdata.car.recommender.model;
  */
 public class Car extends BaseModel{
     
-    private double cid;
-    private Make make;
-    private Model model;
+    private long cid;
+    private String make;
+    private String model;
     private int year;
     private String mpg;
     private String tranmision;
@@ -24,27 +24,27 @@ public class Car extends BaseModel{
     private String consumer_rating;
     private String photo;
 
-    public double getCid() {
+    public long getCid() {
         return cid;
     }
 
-    public void setCid(double cid) {
+    public void setCid(long cid) {
         this.cid = cid;
     }
 
-    public Make getMake() {
+    public String getMake() {
         return make;
     }
 
-    public void setMake(Make make) {
+    public void setMake(String make) {
         this.make = make;
     }
 
-    public Model getModel() {
+    public String getModel() {
         return model;
     }
 
-    public void setModel(Model model) {
+    public void setModel(String model) {
         this.model = model;
     }
 

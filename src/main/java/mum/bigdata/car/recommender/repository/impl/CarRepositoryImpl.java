@@ -44,9 +44,19 @@ public class CarRepositoryImpl extends RepositoryAbst<Car> implements CarReposit
         List<Car> cars = new ArrayList<>();
         while(rs.next()){
             Car car = new Car();
-            car.setId(rs.getLong("car.id"));
+            car.setCid(rs.getLong("car.cid"));
             car.setName(rs.getString("car.name"));
-            car.setPhoto(rs.getString("car.photo"));
+            car.setMake(rs.getString("car.make"));
+            car.setModel(rs.getString("car.model"));
+            car.setYear(rs.getInt("car.year"));
+            car.setMpg(rs.getString("car.mpg"));
+            car.setTranmision(rs.getString("car.transmission"));
+            car.setDoors(rs.getByte("car.doors"));
+            car.setSubmodel(rs.getString("car.submodel"));
+            car.setMsrp(rs.getInt("car.msrp"));
+            car.setRating(rs.getString("car.rating"));
+            car.setConsumer_rating(rs.getString("car.customer_rating"));
+            car.setPhoto(rs.getString("car.photo"));            
             cars.add(car);
         }
         return cars;

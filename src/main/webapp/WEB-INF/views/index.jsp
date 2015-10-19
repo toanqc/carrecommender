@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div name="cars"></div>
+            <div name="cars" id="cars"></div>
         </div>
         <script type="text/javascript">
             $(function () {
@@ -103,11 +103,18 @@
                 var makeName = $( "#makes option:selected").text();
                 var modelName = $( "#models option:selected").text();
                 var year = $( "#years option:selected").text();
-                var items = "";
+                var items = "<ul>";
                 $.getJSON("searchCar?make="+makeName+"&model="+modelName+"&year="+year, function (data) {
                     $.each(data, function (index, item) {
-                        items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                        items +="<li><div>";
+                        items += "<div>" + item.cid + "</div>";
+                        items += "<div>" + item.name + "</div>";
+                        items += "<div>" + item.mode + "</div>";
+                        items += "<div>" + item.submodel + "</div>";
+                        items += "<div>" + item.photo + "</div>";
+                        items +="</div></li>";
                     });
+                    items += "<ul>";
                     $("#cars").html(items);
                 });
             });

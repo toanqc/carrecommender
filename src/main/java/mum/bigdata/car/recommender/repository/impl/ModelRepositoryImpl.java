@@ -36,9 +36,8 @@ public class ModelRepositoryImpl extends RepositoryAbst<Model> implements ModelR
     }
 
     @Override
-    public List<Model> getModels(long makeId){
-        String sql = "Select * from model where make=" + makeId;
-//        String sql = String.format("Select model from car where make='%s' group by model" ,makeId);
+    public List<Model> getModels(String makeName) {
+        String sql = "Select * from model where make='" + makeName +"'";
         try {
             return this.get(sql);
         } catch (SQLException ex) {
@@ -48,15 +47,8 @@ public class ModelRepositoryImpl extends RepositoryAbst<Model> implements ModelR
     }
 
     @Override
-    public List<Model> getModels(String makeName) {
-//        String sql = "Select * from model where make='" + makeName +"'";
-        String sql = String.format("Select model from car where make='%s' group by model" ,makeName);
-        try {
-            return this.get(sql);
-        } catch (SQLException ex) {
-            Logger.getLogger(ModelRepositoryImpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+    public List<Model> getModels(long makeId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
