@@ -65,4 +65,12 @@ public class CarController {
         return models;
     }
     
+    private ArrayList<Integer> getRecommendations(int userId){
+		// TODO: Retrieve the trace column in tracker table
+		// TODO: convert result into 2-D array
+		// TODO: use Apriori class in util to get the frequent item set
+    	
+    	return null;
+    }
+    
 }
