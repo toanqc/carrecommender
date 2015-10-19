@@ -13,6 +13,13 @@ public class Model extends BaseModel{
     
     private Make make;
 
+    public Model() {
+    }
+
+    public Model(long id, String name) {
+        super(id, name);
+    }
+
     public Make getMake() {
         return make;
     }

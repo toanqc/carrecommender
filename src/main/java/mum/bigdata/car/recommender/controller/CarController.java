@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import javax.servlet.http.HttpServletRequest;
 import mum.bigdata.car.recommender.model.Make;
+import mum.bigdata.car.recommender.model.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,4 +44,15 @@ public class CarController {
 
         return makes;
     }
+    
+    @RequestMapping(value="models")
+    public @ResponseBody List<Model> getModels(HttpServletRequest request){
+        
+        List<Model> models = new ArrayList<>();
+        models.add(new Model(3, "A3 Sedan"));
+        models.add(new Model(5,"11A5 Coupe"));
+
+        return models;
+    }
+    
 }
