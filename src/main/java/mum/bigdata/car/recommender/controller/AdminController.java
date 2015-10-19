@@ -17,7 +17,9 @@ public class AdminController {
 	@RequestMapping(value = "update-rules", method = RequestMethod.GET)
 	public String generateRuleSet(HttpServletRequest request){
 		
-		
+		// TODO: Retrieve the trace column in tracker table
+		// TODO: convert result into 2-D array
+		// TODO: use Apriori to get the frequent item set
 		
 		return "admin";
 	}	
