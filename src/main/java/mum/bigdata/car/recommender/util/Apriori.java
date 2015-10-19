@@ -25,17 +25,17 @@ public class Apriori {
     private List<int[]> dataSet;
     private double minSup; 
  
-    public  Apriori(List<int[]> data, int s) throws Exception{
+    public  Apriori(List<int[]> data, int s){
     	dataSet = data;  
     	minSup = s;  	
     }
 
-    public ArrayList<Integer> getItemSet() throws Exception {
+    public ArrayList<Integer> getItemSet(){
         ArrayList<SetItem> resultSet = calculateFrequentItemsets(createList());
         return getSortedSet(resultSet);
     }    
     
-	private ArrayList<Integer> createList() {
+	public ArrayList<Integer> createList() {
     	ArrayList<Integer> items = new ArrayList<Integer>();
     
     	for(int i = 0; i < dataSet.size(); i++){
@@ -49,7 +49,7 @@ public class Apriori {
     	return items;
 	}	
 		
-	private ArrayList<SetItem> calculateFrequentItemsets(ArrayList<Integer> set){
+	public ArrayList<SetItem> calculateFrequentItemsets(ArrayList<Integer> set){
 		ArrayList<SetItem> resultSet = new ArrayList<SetItem>();
 		int count, i, j;
 		int size = set.size();
@@ -89,7 +89,7 @@ public class Apriori {
 		return resultSet;
 	}
 	
-	private ArrayList<Integer> getSortedSet(ArrayList<SetItem> set){
+	public ArrayList<Integer> getSortedSet(ArrayList<SetItem> set){
 		Collections.sort(set, new MyComparator());   
         ArrayList<Integer> result = new ArrayList<Integer>();
         
@@ -114,22 +114,4 @@ class MyComparator implements Comparator<SetItem>{
         }
     }	
     
-}
-
-class SetItem {
-	private int item;
-	private int count;
-	
-	public SetItem(int item, int count){
-		this.item = item;
-		this.count = count;
-	}
-	
-	public int getItem(){
-		return item;
-	}
-	
-	public int getCount(){
-		return count;
-	}
 }
