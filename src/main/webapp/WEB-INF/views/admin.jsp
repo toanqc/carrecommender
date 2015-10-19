@@ -18,8 +18,16 @@
 	<c:if test="${not empty output}">
 		<p>
 			Output: <br/>
-			${output} <br/>
-			${query}
+			<table>
+			    <c:forEach var="car" items="${output}">
+			        <tr>
+			            <td>${car.make}</td>
+			            <td>${car.model}</td>
+			            <td>${car.year}</td>
+			            <td><img src="${car.photo}" width="50"/></td>
+			        </tr> 
+			    </c:forEach>
+			</table>
 		</p>
 	</c:if>
 	<hr>

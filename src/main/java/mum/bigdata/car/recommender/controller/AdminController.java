@@ -38,7 +38,7 @@ public class AdminController {
     	Recommender rec = new Recommender(userId);
     	userRecommendations = rec.getRecommendation();
     	
-    	model.addAttribute("data", userRecommendations);
+    	model.addAttribute("output", userRecommendations);
 		return "admin";
 		
 //    	data.add(new int[]{200703618,200703609,200703608,200703614,200703615,200703610,200673635});  	
