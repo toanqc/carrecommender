@@ -35,9 +35,9 @@ public class Apriori {
         return getSortedSet(resultSet);
     }    
     
-    public String formatToQuery(ArrayList<Integer> set){
+    public String formatToQuery(ArrayList<Integer> set, String columnName){
     	String cond = Arrays.deepToString(set.toArray());      
-    	cond = cond.replace(", ", ",%' OR LIKE '%,").replace("[", " LIKE '%,").replace("]", ",%' ");
+    	cond = cond.replace(", ", ",%' OR " + columnName + " LIKE '%,").replace("[", columnName + " LIKE '%,").replace("]", ",%' ");
         return cond;
     }
 
