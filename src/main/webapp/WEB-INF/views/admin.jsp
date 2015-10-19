@@ -10,15 +10,16 @@
 	<p>For testing purposes </p>
 	<p>Input: comma separated car id , Output: recommendation list</p>
 	
-	<form action="/rec" method="POST">
+	<form action="rec" method="POST">
 		<input name="input" value=""/>
 		<input type="submit" value="Get Recommendations" />
 	</form>
 
-	<c:if test="${not empty list}">
+	<c:if test="${not empty output}">
 		<p>
 			Output: <br/>
-			${list}
+			${output} <br/>
+			${query}
 		</p>
 	</c:if>
 </body>
