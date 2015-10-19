@@ -1,18 +1,20 @@
 package mum.bigdata.car.recommender.service;
 
-public interface UserService<T> {
+import mum.bigdata.car.recommender.model.User;
+
+public interface UserService {
 
 	/**
 	 * 
 	 * @param t
 	 * @return
 	 */
-	T saveUser(T t);
+	User saveUser(User t);
 
 	/**
 	 * 
 	 * @param t
 	 * @return
 	 */
-	T getUser(String id);
+	User getUser(String id);
 }

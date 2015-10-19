@@ -7,7 +7,7 @@
 		and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/config/root-context.xml</param-value>
+		<param-value>/WEB-INF/config/application-context.xml</param-value>
 	</context-param>
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->

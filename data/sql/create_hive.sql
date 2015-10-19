@@ -6,7 +6,7 @@ CREATE TABLE car (id bigint, cid int, name string, make string, model string, ye
 CREATE TABLE make (id bigint, name string);
 CREATE TABLE model (id bigint, make string, model string);
 CREATE TABLE tracker (id bigint, userid bigint, cartrace string);
-CREATE TABLE user (id bigint, name string, email string);
+CREATE TABLE `user` (id bigint, name string, email string);
 CREATE TABLE year (id bigint, year int);
 
 LOAD DATA INPATH '/user/qct/car.csv' OVERWRITE INTO TABLE car;

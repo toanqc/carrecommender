@@ -1,18 +1,20 @@
 package mum.bigdata.car.recommender.repository;
 
-public interface UserRepository<T> {
+import mum.bigdata.car.recommender.model.User;
+
+public interface UserRepository {
 
 	/**
 	 * 
 	 * @param t
 	 * @return
 	 */
-	T save(T t);
+	User save(User t);
 
 	/**
 	 * 
 	 * @param id
 	 * @return
 	 */
-	T get(String id);
+	User get(String id);
 }

@@ -81,7 +81,7 @@ function loginSuccessful() {
 				+ response.name + '!';
 
 		var user = {
-			"facebookId" : response.id,
+			"id" : response.id,
 			"name" : response.name,
 			"email" : response.email
 		}
