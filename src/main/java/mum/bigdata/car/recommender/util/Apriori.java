@@ -17,7 +17,9 @@ public class Apriori {
     	data.add(new int[]{7,3,4,5,6,1,2});  
     	
         Apriori ap = new Apriori(data, 1);
-        System.out.println(Arrays.deepToString(ap.getItemSet().toArray()));
+        ArrayList<Integer> resultSet = ap.getItemSet();
+        System.out.println(Arrays.deepToString(resultSet.toArray()));
+        System.out.println(ap.formatToQuery(resultSet));
     }
 
     private List<int[]> dataSet;
@@ -32,6 +34,12 @@ public class Apriori {
         ArrayList<SetItem> resultSet = calculateFrequentItemsets(createList());
         return getSortedSet(resultSet);
     }    
+    
+    public String formatToQuery(ArrayList<Integer> set){
+    	String cond = Arrays.deepToString(set.toArray());      
+    	cond = cond.replace(", ", ",%' OR LIKE '%,").replace("[", " LIKE '%,").replace("]", ",%' ");
+        return cond;
+    }
 
 	private ArrayList<Integer> createList() {
     	ArrayList<Integer> items = new ArrayList<Integer>();
