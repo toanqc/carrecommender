@@ -59,6 +59,8 @@ $( document ).ready(function() {
             });
 
             $("#cars").html(items);
+            
+        	$.getJSON("tracker?carid="+data[0].cid);
         });
     });
 });

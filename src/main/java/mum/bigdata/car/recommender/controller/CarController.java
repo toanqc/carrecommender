@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,16 +12,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import mum.bigdata.car.recommender.model.Car;
 import mum.bigdata.car.recommender.model.Make;
 import mum.bigdata.car.recommender.model.Model;
+import mum.bigdata.car.recommender.model.User;
 import mum.bigdata.car.recommender.service.CarService;
 import mum.bigdata.car.recommender.service.MakeService;
 import mum.bigdata.car.recommender.service.ModelService;
 import org.springframework.web.servlet.ModelAndView;
+import mum.bigdata.car.recommender.util.Recommender;
 
 @Controller
+@SessionAttributes({"user"})
 public class CarController {
 
     @Autowired
@@ -34,7 +40,7 @@ public class CarController {
 
     @RequestMapping(value = "route", method = RequestMethod.GET)
     public String router(HttpServletRequest request) {
-		// This is the central location for all links to be tracked
+        // This is the central location for all links to be tracked
         // TODO: Extract URL from request variable
         // TODO: URL can be an internal or external URL
         // TODO: Save Car ID to tracker table using user id
@@ -79,6 +85,22 @@ public class CarController {
     List<Car> getCars(@RequestParam("make") String makeName,
             @RequestParam("model") String modelName, @RequestParam("year") String year) {
         return carService.getCars(makeName, modelName, year);
+    }
+
+    @RequestMapping(value = "car", method = RequestMethod.GET)
+    public String getCar(HttpServletRequest request) {
+        // Get the car information using ID from GET request
+
+        return "cardetails";
+    }
+
+    @RequestMapping(value = "tracker")
+    public String trackSearch(@RequestParam("carid") String specimen, @ModelAttribute User user) {
+
+        Recommender rec = new Recommender(user.getId());
+        rec.trackSearch(specimen);
+
+        return null;
     }
 
     /*
