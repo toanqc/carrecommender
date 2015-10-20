@@ -28,4 +28,15 @@ public class LoginController {
 		
 		return "index";
 	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logoutSuccess(ModelMap model) {
+	
+		User user = (User) model.get("user");
+		user.setId(null);
+		model.addAttribute("user", user);
+		System.out.println("logged out");
+		
+		return null;
+	}	
 }

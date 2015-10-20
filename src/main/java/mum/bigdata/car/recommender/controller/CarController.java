@@ -37,17 +37,6 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @RequestMapping(value = "route", method = RequestMethod.GET)
-    public String router(HttpServletRequest request) {
-        // This is the central location for all links to be tracked
-        // TODO: Extract URL from request variable
-        // TODO: URL can be an internal or external URL
-        // TODO: Save Car ID to tracker table using user id
-
-        String url = "";
-        return "redirect:" + url;
-    }
-
     @RequestMapping(value = "car", method = RequestMethod.GET)
     public ModelAndView getCar(@RequestParam("cid") long cid) {
         ModelAndView modelAndView = new ModelAndView("cardetails");
@@ -89,13 +78,12 @@ public class CarController {
 	@RequestMapping(value = "tracker")
 	public @ResponseBody String trackSearch(@RequestParam("carid") String specimen, @ModelAttribute User user) {
 		String id = "";
-		if( user != null ){
+		if( user != null && user.getId() == null  ){
 			id = user.getId();
-		}
-		
-        Recommender rec = new Recommender(id);
-		rec.trackSearch(specimen);
-		
+		    Recommender rec = new Recommender(id);
+		    rec.trackSearch(specimen);
+		} 
+
 		return null;
 	}
 	

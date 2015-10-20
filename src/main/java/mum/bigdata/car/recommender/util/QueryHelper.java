@@ -14,4 +14,15 @@ public class QueryHelper {
         return cond;
     }
 
+    public static String formatToINQuery(ArrayList<String> set, String columnName){
+    	String cond = columnName + " IN (" + Arrays.deepToString(set.toArray()) + ") ";      
+    	cond = cond.replace("[", "").replace("]", "");
+        return cond;
+    }    
+    
+    public static String formatToEqualQuery(ArrayList<String> set, String columnName){
+    	String cond = columnName + "=" + Arrays.deepToString(set.toArray());      
+    	cond = cond.replace(", ", "' OR " + columnName + "='").replace("[", "'").replace("]", "'");
+        return cond;
+    }   
 }

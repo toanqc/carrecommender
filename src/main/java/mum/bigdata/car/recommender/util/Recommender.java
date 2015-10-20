@@ -37,7 +37,7 @@ public class Recommender {
 	public ArrayList<Car> getRecommendation(){
 		if( userId.isEmpty() ) return null;
 
-		ArrayList<String> userCarTrace = getUserCarTrace();
+		ArrayList<String> userCarTrace = getUserCarTrace();	
 		List<List<String>> traces = getAssociatedTraces(userCarTrace);
 		Apriori ap = new Apriori(traces, minimumSupport);
 		
@@ -85,13 +85,14 @@ public class Recommender {
 		
 		try (Connection conn = cm.getConnection()) {			
 			String query = "";
-			
-			// Get all the user traces
+
+			// No recommendations yet for users with no tracks
 			if( carTrace.isEmpty() ){
-				query = "SELECT userid, cartrace FROM `tracker` limit " + limit;
-			} else {
-				query = "SELECT userid, cartrace FROM `tracker` WHERE (" + QueryHelper.formatToLikeQuery(carTrace, "cartrace") + ") limit " + limit;
+				return null;
 			}
+			
+			// Get users with similar tracks
+			query = "SELECT userid FROM `tracker` WHERE " + QueryHelper.formatToINQuery(carTrace, "cartrace");
 			
 			//Debug
 			System.out.println("query: " + query);
@@ -99,21 +100,35 @@ public class Recommender {
 			PreparedStatement statement = conn.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
 
-			while (rs.next()) {
-				id = rs.getString("userid");
-				if( map.containsKey(id) ){
-					row = map.get(id);
-					row.add(rs.getString("cartrace"));
-				} else {
-					row.clear();
-					row.add(rs.getString("cartrace"));
-					map.put(id, row);
-				}
-			}
-			
-			for (ArrayList<String> entry : map.values()){
-				associatedList.add(entry);
-			}
+ 			ArrayList<String> ids = new ArrayList<String>();
+ 			while(rs.next()){
+ 				ids.add(String.valueOf(rs.getLong("userid")));
+ 			}
+ 			
+ 			// Get traces from these users
+ 			query = "SELECT userid, cartrace FROM `tracker` WHERE " + QueryHelper.formatToINQuery(ids, "userid") + " limit " + limit;
+ 			
+ 			//Debug
+ 			System.out.println("query: " + query);
+ 			
+ 			statement = conn.prepareStatement(query);
+ 			rs = statement.executeQuery();
+ 
+ 			while (rs.next()) {
+ 				id = rs.getString("userid");
+ 				if( map.containsKey(id) ){
+ 					row = map.get(id);
+ 					row.add(rs.getString("cartrace"));
+ 				} else {
+ 					row.clear();
+ 					row.add(rs.getString("cartrace"));
+ 					map.put(id, row);
+ 				}
+ 			}
+ 			
+ 			for (ArrayList<String> entry : map.values()){
+ 				associatedList.add(entry);
+ 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}				
@@ -127,7 +142,7 @@ public class Recommender {
 		ArrayList<String> uniqueList = new ArrayList<String>();
 		
 		try (Connection conn = cm.getConnection()) {
-			String query = QueryHelper.formatToLikeQuery(carIdList, "cid");
+			String query = QueryHelper.formatToINQuery(carIdList, "cid");
 			query = "SELECT * FROM car WHERE " + query;
 			
 			PreparedStatement statement = conn.prepareStatement(query);

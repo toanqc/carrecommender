@@ -19,6 +19,9 @@ function statusChangeCallback(response) {
 		// they are logged into this app or not.
 		document.getElementById('status').innerHTML = 'Please log '
 				+ 'into Facebook.';
+	
+		logoutSuccess();
+	
 	}
 }
 
@@ -56,7 +59,6 @@ window.fbAsyncInit = function() {
 	FB.getLoginStatus(function(response) {
 		statusChangeCallback(response);
 	});
-
 };
 
 // Load the SDK asynchronously
@@ -99,4 +101,17 @@ function loginSuccessful() {
 			}
 		});
 	});
+}
+
+function logoutSuccess(){
+	$.ajax({
+		type : "GET",
+		url : "/carrecommender/logout",
+		success : function(result) {
+			// do something.
+		},
+		error : function(result) {
+			// do something.
+		}
+	});	
 }

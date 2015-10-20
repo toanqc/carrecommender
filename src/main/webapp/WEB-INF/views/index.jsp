@@ -6,6 +6,9 @@
 <head>
 <title>Car Recommender</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <link href="<c:url value="resources/css/main.css" />" rel="stylesheet">
 <link rel="shortcut icon" type="image/png" sizes="128x128"
 	type="image/png" href="<c:url value="/resources/img/favicon.png" />" />
