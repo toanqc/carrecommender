@@ -64,12 +64,12 @@ public class Car extends BaseModel{
         this.mpg = mpg;
     }
 
-    public String getTranmision() {
+    public String getTransmission() {
         return transmission;
     }
 
-    public void setTranmision(String tranmision) {
-        this.transmission = tranmision;
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
     }
 
     public byte getDoors() {

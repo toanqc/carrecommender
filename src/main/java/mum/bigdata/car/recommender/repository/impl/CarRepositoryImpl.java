@@ -56,7 +56,7 @@ public class CarRepositoryImpl extends RepositoryAbst<Car> implements CarReposit
             car.setModel(rs.getString("car.model"));
             car.setYear(rs.getInt("car.year"));
             car.setMpg(rs.getString("car.mpg"));
-            car.setTranmision(rs.getString("car.transmission"));
+            car.setTransmission(rs.getString("car.transmission"));
             car.setDoors(rs.getByte("car.doors"));
             car.setSubmodel(rs.getString("car.submodel"));
             car.setMsrp(rs.getInt("car.msrp"));

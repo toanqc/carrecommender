@@ -46,7 +46,7 @@ $( document ).ready(function() {
             	items += "<div class='search-result-img'><img src='" + item.photo + "'></div>";
             	items += "<div class='search-result-text'>";
             	items += "<div>" + item.make + " " + item.submodel + " " + item.year + "</div>";
-                items += "<div>" + item.name + "</div>";
+                items += "<div><a href=\"car?cid=" +item.cid+"\">" + item.name + "</a></div>";
                 items += "<div>Transmission: " + item.transmission + "</div>";
             	items += "<div>Doors: " + item.doors + "</div>";
             	items += "<div>MSRP: $" + item.msrp + "</div>";
