@@ -35,6 +35,10 @@ public class Apriori {
     }    
     
 	public ArrayList<String> createList() {
+		if( dataSet.isEmpty() ){
+			return null;
+		}
+		
     	ArrayList<String> items = new ArrayList<String>();
     
     	for(int i = 0; i < dataSet.size(); i++){
