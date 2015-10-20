@@ -180,3 +180,37 @@ body {
 	margin-top: 20px;
 	margin-left: 20px;
 }
+
+/* Car Detail */
+.car-detail-container {
+	width: 980px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.car-detail-container .car-detail-img {
+	float: left;
+}
+
+.car-detail-container .car-detail-img img {
+	margin-left: 130px;
+}
+
+.car-detail-text {
+	margin-left: 20px;
+	margin-top: 25px;
+	float: left;
+}
+
+.car-detail-make {
+	font-size: 25px;
+}
+
+.car-detail-name {
+	font-size: 17px;
+	margin-bottom: 10px;	
+}
+
+.car-transmission {
+	text-transform: capitalize;
+}
