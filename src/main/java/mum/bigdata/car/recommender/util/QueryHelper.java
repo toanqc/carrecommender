@@ -10,7 +10,7 @@ public class QueryHelper {
 	
     public static String formatToLikeQuery(ArrayList<String> set, String columnName){
     	String cond = Arrays.deepToString(set.toArray());      
-    	cond = cond.replace(", ", ",%' OR " + columnName + " LIKE '%,").replace("[", columnName + " LIKE '%,").replace("]", ",%' ");
+    	cond = cond.replace(", ", "%' OR " + columnName + " LIKE '%").replace("[", columnName + " LIKE '%").replace("]", "%' ");
         return cond;
     }
 

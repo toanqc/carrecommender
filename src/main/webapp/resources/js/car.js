@@ -71,29 +71,30 @@ $( document ).ready(function() {
         	}
 
             $("#cars").html(items);
-        	$.getJSON("tracker?carid="+data[0].cid);
+            $.getJSON("tracker?carid="+data[0].cid);
         	
         	$.getJSON("recommendations", function (data) {
-                $.each(data, function (index, item) {
+        		recitems = "";
+                $.each(data, function (index, car) {
                 	count++;
                 	recitems += "<div class='search-result'>";
-                	items += "<div class='search-result-img'><img src='" + item.photo + "'></div>";
-                	items += "<div class='search-result-text'>";
-                	items += "<div>" + item.make + " " + item.submodel + " " + item.year + "</div>";
-                    items += "<div>" + item.name + "</div>";
-                    items += "<div>Transmission: " + item.transmission + "</div>";
-                	items += "<div>Doors: " + item.doors + "</div>";
-                	items += "<div>MSRP: $" + item.msrp + "</div>";
-                	items += "<div>Rating: " + item.rating + "</div>";
-                	items += "<div>Cosumer Rating: " + item.consumerRating + "</div>";
-                	items += "</div></div>";
+                	recitems += "<div class='search-result-img'><img src='" + car.photo + "'></div>";
+                	recitems += "<div class='search-result-text'>";
+                	recitems += "<div>" + car.make + " " + car.submodel + " " + car.year + "</div>";
+                	recitems += "<div>" + car.name + "</div>";
+                	recitems += "<div>Transmission: " + car.transmission + "</div>";
+                	recitems += "<div>Doors: " + car.doors + "</div>";
+                	recitems += "<div>MSRP: $" + car.msrp + "</div>";
+                	recitems += "<div>Rating: " + car.rating + "</div>";
+                	recitems += "<div>Cosumer Rating: " + car.consumerRating + "</div>";
+                	recitems += "</div></div>";
                 	if (count % 2 == 0) {
-                		items += "<div class='clearfix'></div>";
+                		recitems += "<div class='clearfix'></div>";
                 	}
                 });
 
                 $(".recommendation-container").show();
-                $("#recommendation").html(items);
+                $("#recommendation").html(recitems);
             });  
         });
     });

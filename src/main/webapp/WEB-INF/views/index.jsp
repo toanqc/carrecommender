@@ -74,7 +74,7 @@
 
 		<div style="clear: both"></div>
 
-		<div class="recommendation-container" style="display: none">
+		<div class="recommendation-container search-result-container" style="display: none">
 			<div class="result-header">
 				<h2>Recommendations</h2>
 			</div>

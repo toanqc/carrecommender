@@ -56,7 +56,7 @@ public class Apriori {
 		Collections.sort(set);
 		
 		//Debug
-		//System.out.println(Arrays.deepToString(set.toArray()));
+		System.out.println(Arrays.deepToString(set.toArray()));
 		
 		for(i = 0; i < size; i++){
 			count = 0;	
@@ -80,10 +80,10 @@ public class Apriori {
 		}
 		
 		//Debug
-//        for(SetItem t: resultSet){
-//        	System.out.print(t.getItem() + "=" + t.getCount() + ",");
-//        }		
-//        System.out.println();
+        for(SetItem t: resultSet){
+        	System.out.print(t.getItem() + "=" + t.getCount() + ",");
+        }		
+        System.out.println();
 		
 		return resultSet;
 	}

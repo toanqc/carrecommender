@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -20,7 +21,7 @@ import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
  */
 public class Recommender {
 
-	private int minimumSupport = 2;
+	private int minimumSupport = 3;
 	private String userId;
 	private HiveConnectionManager cm = HiveConnectionManager.getInstance();
 	
@@ -33,31 +34,34 @@ public class Recommender {
 	}
 	
 	public ArrayList<Car> getRecommendation(){
-		//if( userId.isEmpty() ) return null;
+		if( userId.isEmpty() ) return null;
 
-		ArrayList<String> userCarTrace = getUserCarTrace(userId);
-		Apriori ap = new Apriori( getAssociatedTraces(userCarTrace), minimumSupport);
+		ArrayList<String> userCarTrace = getUserCarTrace();
+		List<List<String>> traces = getAssociatedTraces(userCarTrace);
+		Apriori ap = new Apriori(traces, minimumSupport);
 		
 	    ArrayList<SetItem> set = ap.calculateFrequentItemsets(ap.createList());
 	    ArrayList<String> resultSet = ap.getSortedSet(set);
 	    
-	    for(String s: resultSet){
-	    	System.out.println(s);
-	    }
+	    //Debug
+	    System.out.println("user trace: " + userCarTrace.toString());
+	    System.out.println("associated: " + Arrays.deepToString(traces.toArray()));
+	    System.out.println("frequent set: " + Arrays.deepToString(set.toArray()));
+	    System.out.println("result set: " + resultSet.toString());
 	    
 		return getCarDetails(resultSet);
 	}
 	
-	private ArrayList<String> getUserCarTrace(String userId){
+	private ArrayList<String> getUserCarTrace(){
 		ArrayList<String> userData = new ArrayList<String>();
     	String query = "";
 
 		try (Connection conn = cm.getConnection()) {
 			// Get all the user traces
-			query = "SELECT cartrace FROM `tracker` WHERE id=?";
+			query = "SELECT cartrace FROM `tracker` WHERE userid='" + userId + "'";
 			
 			PreparedStatement statement = conn.prepareStatement(query);
-			statement.setString(1, userId);
+			//statement.setString(1, userId);
 			
 			ResultSet rs = statement.executeQuery();
 			
@@ -80,13 +84,13 @@ public class Recommender {
 		
 		try (Connection conn = cm.getConnection()) {
 			// Get all the user traces
-			String query = "SELECT id, cartrace FROM `tracker` WHERE (" + QueryHelper.formatToLikeQuery(carTrace, "cartrace") + ")";
-			
+			String query = "SELECT userid, cartrace FROM `tracker` WHERE (" + QueryHelper.formatToLikeQuery(carTrace, "cartrace") + ")";
+			System.out.println("query: " + query);
 			PreparedStatement statement = conn.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
 
 			while (rs.next()) {
-				id = rs.getString("id");
+				id = rs.getString("userid");
 				if( map.containsKey(id) ){
 					row = map.get(id);
 					row.add(rs.getString("cartrace"));
@@ -136,12 +140,16 @@ public class Recommender {
 				}
 			}
 			
-			String id;
-			for(int i = 1; i <= carIdList.size(); i++){
+			String id, model;
+			ArrayList<String> models = new ArrayList<String>();
+			
+			for(int i = 0; i < carIdList.size(); i++){
 				id = carIdList.get(i);
 				for(Car c: carList){
-					if( c.getCid() == Long.parseLong(id) ){
+					model = c.getMake() + c.getModel() + c.getYear();
+					if( c.getCid() == Long.parseLong(id) && ! models.contains(model)){
 						sortedList.add(c);
+						models.add(model);
 						break;
 					}
 				}
