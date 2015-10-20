@@ -33,14 +33,18 @@ public class Recommender {
 	}
 	
 	public ArrayList<Car> getRecommendation(){
-		if( userId.isEmpty() ) return null;
+		//if( userId.isEmpty() ) return null;
 
 		ArrayList<String> userCarTrace = getUserCarTrace(userId);
 		Apriori ap = new Apriori( getAssociatedTraces(userCarTrace), minimumSupport);
 		
 	    ArrayList<SetItem> set = ap.calculateFrequentItemsets(ap.createList());
 	    ArrayList<String> resultSet = ap.getSortedSet(set);
-	
+	    
+	    for(String s: resultSet){
+	    	System.out.println(s);
+	    }
+	    
 		return getCarDetails(resultSet);
 	}
 	
@@ -109,7 +113,7 @@ public class Recommender {
 		ArrayList<String> uniqueList = new ArrayList<String>();
 		
 		try (Connection conn = cm.getConnection()) {
-			String query = QueryHelper.formatToLikeQuery(carIdList, "cartrace");
+			String query = QueryHelper.formatToLikeQuery(carIdList, "cid");
 			query = "SELECT * FROM car WHERE " + query;
 			
 			PreparedStatement statement = conn.prepareStatement(query);
@@ -148,6 +152,18 @@ public class Recommender {
 		}	
 		
 		return sortedList;
+	}
+	
+	public void trackSearch(String specimenCarId){
+		try (Connection conn = cm.getConnection()) {
+			String sql = "INSERT INTO `tracker`(userid, cartrace) VALUES(?, ?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			statement.setString(2, specimenCarId);
+			statement.executeUpdate();	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}			
 	}
 	
 	public void showTracks(){

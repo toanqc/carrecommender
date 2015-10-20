@@ -53,7 +53,7 @@ $( document ).ready(function() {
             	items += "'><img src='" + item.photo + "'></div>";
             	items += "<div class='search-result-text'>";
             	items += "<div>" + item.make + " " + item.submodel + " " + item.year + "</div>";
-                items += "<div class='word-wrap'>" + item.name + "</div>";
+                items += "<div class='word-wrap'><a href=\"car?cid=" +item.cid+"\">" + item.name + "</a></div>";
                 items += "<div>Transmission: " + item.transmission + "</div>";
             	items += "<div>Doors: " + item.doors + "</div>";
             	items += "<div>MSRP: $" + item.msrp + "</div>";
@@ -66,6 +66,30 @@ $( document ).ready(function() {
             });
 
             $("#cars").html(items);
+        	$.getJSON("tracker?carid="+data[0].cid);
+        	
+        	$.getJSON("recommendations", function (data) {
+                $.each(data, function (index, item) {
+                	count++;
+                	recitems += "<div class='search-result'>";
+                	items += "<div class='search-result-img'><img src='" + item.photo + "'></div>";
+                	items += "<div class='search-result-text'>";
+                	items += "<div>" + item.make + " " + item.submodel + " " + item.year + "</div>";
+                    items += "<div>" + item.name + "</div>";
+                    items += "<div>Transmission: " + item.transmission + "</div>";
+                	items += "<div>Doors: " + item.doors + "</div>";
+                	items += "<div>MSRP: $" + item.msrp + "</div>";
+                	items += "<div>Rating: " + item.rating + "</div>";
+                	items += "<div>Cosumer Rating: " + item.consumerRating + "</div>";
+                	items += "</div></div>";
+                	if (count % 2 == 0) {
+                		items += "<div class='clearfix'></div>";
+                	}
+                });
+
+                $(".recommendation-container").show();
+                $("#recommendation").html(items);
+            });  
         });
     });
 });
