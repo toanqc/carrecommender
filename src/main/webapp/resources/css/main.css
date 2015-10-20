@@ -114,3 +114,26 @@ body {
 	color: #fff;
 	cursor: pointer;
 }
+
+.search-result-container {
+	width: 830px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.search-result-img {
+	float: left;
+	margin-top: 10px;
+}
+
+.search-result-img img {
+	width: 200px;
+	height: 130px;
+	margin-left: 30px;
+}
+
+.search-result-text {
+	float: left;
+	margin-top: 25px;
+	margin-left: 20px;
+}
