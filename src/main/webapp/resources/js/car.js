@@ -68,13 +68,13 @@ $( document ).ready(function() {
 	            	}
 	            	$("#result").html("<h2>Result list</h2>");
 	            });
+	            
+	            $.getJSON("tracker?carid="+data[0].cid);
         	} else {
         		$("#result").html("<h2>No record found!</h2>");	
         	}
 
             $("#cars").html(items);
-            $.getJSON("tracker?carid="+data[0].cid);
-        	
         	getRecommendations(); 
         });
     });

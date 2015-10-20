@@ -53,6 +53,10 @@ public class Apriori {
 	}	
 		
 	public ArrayList<SetItem> calculateFrequentItemsets(ArrayList<String> set){
+		if( set == null || set.isEmpty() ){
+			return null;
+		}
+		
 		ArrayList<SetItem> resultSet = new ArrayList<SetItem>();
 		int count, i, j;
 		int size = set.size();
