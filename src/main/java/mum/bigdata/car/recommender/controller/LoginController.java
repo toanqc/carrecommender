@@ -1,19 +1,19 @@
 package mum.bigdata.car.recommender.controller;
 
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.support.SessionStatus;
 
 import mum.bigdata.car.recommender.model.User;
 import mum.bigdata.car.recommender.service.UserService;
 
 @Controller
-@SessionAttributes({"user"})
+@SessionAttributes({ "user" })
 public class LoginController {
 
 	@Autowired
@@ -21,22 +21,17 @@ public class LoginController {
 
 	@RequestMapping(value = "/success", method = RequestMethod.POST)
 	public String loginSuccess(@RequestBody User user, ModelMap model) {
-		
-		// need to proceed the data... insert into database
+
 		userService.saveUser(user);
 		model.addAttribute(user);
-		
+
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logoutSuccess(ModelMap model) {
-	
-		User user = (User) model.get("user");
-		user.setId(null);
-		model.addAttribute("user", user);
-		System.out.println("logged out");
-		
-		return null;
-	}	
+	public String logoutSuccess(SessionStatus status) {
+		status.setComplete();
+
+		return "index";
+	}
 }
