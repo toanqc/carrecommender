@@ -6,13 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 import mum.bigdata.car.recommender.model.Car;
-import mum.bigdata.car.recommender.model.Make;
-import mum.bigdata.car.recommender.model.Model;
 import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
 
 /*

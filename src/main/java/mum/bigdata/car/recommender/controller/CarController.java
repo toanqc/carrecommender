@@ -73,7 +73,7 @@ public class CarController {
 	public @ResponseBody String trackSearch(@RequestParam("carid") String specimen, HttpServletRequest request) {
 		User user = (User) request.getSession().getAttribute("user");
 		String id = "";
-		if (user != null && user.getId() == null) {
+		if (user != null && user.getId() != null) {
 			id = user.getId();
 			Recommender rec = new Recommender(id);
 			rec.trackSearch(specimen);

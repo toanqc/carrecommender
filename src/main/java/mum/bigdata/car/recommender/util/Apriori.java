@@ -35,7 +35,7 @@ public class Apriori {
     }    
     
 	public ArrayList<String> createList() {
-		if( dataSet.isEmpty() ){
+		if( dataSet == null ){
 			return null;
 		}
 		
