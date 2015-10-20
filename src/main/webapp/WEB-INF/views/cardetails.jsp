@@ -19,7 +19,7 @@
 <body>
 	<div class="container">
 		<div class="header-container">
-			<div class="header-left">Logo!</div>
+			<div class="header-left">Car Recommender</div>
 			<div class="header-right">
 				<fb:login-button scope="public_profile,email" autologoutlink="true"
 					onlogin="checkLoginState();">
