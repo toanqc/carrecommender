@@ -105,6 +105,8 @@ public class Recommender {
 	
 	private ArrayList<Car> getCarDetails(ArrayList<String> carIdList){
 		ArrayList<Car> carList = new ArrayList<Car>();
+		ArrayList<Car> sortedList = new ArrayList<Car>();
+		ArrayList<String> uniqueList = new ArrayList<String>();
 		
 		try (Connection conn = cm.getConnection()) {
 			String query = QueryHelper.formatToLikeQuery(carIdList, "cartrace");
@@ -112,22 +114,40 @@ public class Recommender {
 			
 			PreparedStatement statement = conn.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
-
+			
+			String str;
 			while (rs.next()) {
-				Car c = new Car();
-				c.setCid(rs.getLong("cid"));
-				c.setName(rs.getString("name"));
-				c.setMake(rs.getString("make"));
-				c.setModel(rs.getString("model"));
-				c.setYear(rs.getInt("year"));
-				c.setPhoto(rs.getString("photo"));
-				carList.add(c);
+				str = rs.getString("make") + rs.getString("model") + rs.getString("year");
+				if( ! uniqueList.contains(str) ){
+					uniqueList.add(str);
+					
+					Car c = new Car();
+					c.setCid(rs.getLong("cid"));
+					c.setName(rs.getString("name"));
+					c.setMake(rs.getString("make"));
+					c.setModel(rs.getString("model"));
+					c.setYear(rs.getInt("year"));
+					c.setPhoto(rs.getString("photo"));
+					carList.add(c);
+				}
 			}
+			
+			String id;
+			for(int i = 1; i <= carIdList.size(); i++){
+				id = carIdList.get(i);
+				for(Car c: carList){
+					if( c.getCid() == Long.parseLong(id) ){
+						sortedList.add(c);
+						break;
+					}
+				}
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
 		
-		return carList;
+		return sortedList;
 	}
 	
 	public void showTracks(){
