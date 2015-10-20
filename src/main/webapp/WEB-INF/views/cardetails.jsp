@@ -40,7 +40,15 @@
 				<div>Rating: ${car.rating}</div>
 				<div>Consumer Rating: ${car.consumerRating}</div>
 			</div>
+			
+			<input type="hidden" id="carid" value="${car.cid}" />
 		</div>
+		
+		<script>
+			$(document).ready(function(){
+				$.getJSON("tracker?carid=" + $("#carid").val() );
+			});
+		</script>
 	</div>
 </body>
 </html>

@@ -75,22 +75,31 @@ $( document ).ready(function() {
         	
         	$.getJSON("recommendations", function (data) {
         		recitems = "";
+        		count = 0;
                 $.each(data, function (index, car) {
-                	count++;
-                	recitems += "<div class='search-result'>";
-                	recitems += "<div class='search-result-img'><img src='" + car.photo + "'></div>";
-                	recitems += "<div class='search-result-text'>";
-                	recitems += "<div>" + car.make + " " + car.submodel + " " + car.year + "</div>";
-                	recitems += "<div>" + car.name + "</div>";
-                	recitems += "<div>Transmission: " + car.transmission + "</div>";
-                	recitems += "<div>Doors: " + car.doors + "</div>";
-                	recitems += "<div>MSRP: $" + car.msrp + "</div>";
-                	recitems += "<div>Rating: " + car.rating + "</div>";
-                	recitems += "<div>Cosumer Rating: " + car.consumerRating + "</div>";
-                	recitems += "</div></div>";
-                	if (count % 2 == 0) {
-                		recitems += "<div class='clearfix'></div>";
-                	}
+                	
+	            	count++;
+	            	if (count % 2 != 0) {
+	            		recitems += "<div>";
+	            	}
+	            	recitems += "<div class='search-result'>";
+	            	recitems += "<div class='search-result-img";
+	            	if (count % 2 == 0) {
+	            		recitems += " margin-left";
+	            	}
+	            	recitems += "'><img src='" + car.photo + "'></div>";
+	            	recitems += "<div class='search-result-text'>";
+	            	recitems += "<div>" + car.make + " " + car.submodel + " " + car.year + "</div>";
+	            	recitems += "<div class='word-wrap'><a href=\"car?cid=" +car.cid+"\">" + car.name + "</a></div>";
+	            	recitems += "<div>Transmission: " + car.transmission + "</div>";
+	            	recitems += "<div>Doors: " + car.doors + "</div>";
+	            	recitems += "<div>MSRP: $" + car.msrp + "</div>";
+	            	recitems += "<div>Rating: " + car.rating + "</div>";
+	            	recitems += "<div>Cosumer Rating: " + car.consumerRating + "</div>";
+	            	recitems += "</div></div>";
+	            	if (count % 2 == 0) {
+	            		recitems += "</div><div class='clear-left'></div>";
+	            	}                	
                 });
 
                 $(".recommendation-container").show();

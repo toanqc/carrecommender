@@ -22,6 +22,7 @@ import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
 public class Recommender {
 
 	private int minimumSupport = 1;
+	private int limit = 6;
 	private String userId;
 	private HiveConnectionManager cm = HiveConnectionManager.getInstance();
 	
@@ -82,10 +83,19 @@ public class Recommender {
 		ArrayList<String> row = new ArrayList<String>();
 		String id;
 		
-		try (Connection conn = cm.getConnection()) {
+		try (Connection conn = cm.getConnection()) {			
+			String query = "";
+			
 			// Get all the user traces
-			String query = "SELECT userid, cartrace FROM `tracker` WHERE (" + QueryHelper.formatToLikeQuery(carTrace, "cartrace") + ")";
+			if( carTrace.isEmpty() ){
+				query = "SELECT userid, cartrace FROM `tracker` limit " + limit;
+			} else {
+				query = "SELECT userid, cartrace FROM `tracker` WHERE (" + QueryHelper.formatToLikeQuery(carTrace, "cartrace") + ") limit " + limit;
+			}
+			
+			//Debug
 			System.out.println("query: " + query);
+			
 			PreparedStatement statement = conn.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
 
