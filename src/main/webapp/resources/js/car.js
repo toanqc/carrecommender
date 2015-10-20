@@ -42,11 +42,18 @@ $( document ).ready(function() {
         $.getJSON("searchCar?make="+makeName+"&model="+modelName+"&year="+year, function (data) {
             $.each(data, function (index, item) {
             	count++;
+            	if (count % 2 != 0) {
+            		items += "<div>";
+            	}
             	items += "<div class='search-result'>";
-            	items += "<div class='search-result-img'><img src='" + item.photo + "'></div>";
+            	items += "<div class='search-result-img";
+            	if (count % 2 == 0) {
+            		items += " margin-left";
+            	}
+            	items += "'><img src='" + item.photo + "'></div>";
             	items += "<div class='search-result-text'>";
             	items += "<div>" + item.make + " " + item.submodel + " " + item.year + "</div>";
-                items += "<div>" + item.name + "</div>";
+                items += "<div class='word-wrap'>" + item.name + "</div>";
                 items += "<div>Transmission: " + item.transmission + "</div>";
             	items += "<div>Doors: " + item.doors + "</div>";
             	items += "<div>MSRP: $" + item.msrp + "</div>";
@@ -54,7 +61,7 @@ $( document ).ready(function() {
             	items += "<div>Cosumer Rating: " + item.consumerRating + "</div>";
             	items += "</div></div>";
             	if (count % 2 == 0) {
-            		items += "<div class='clearfix'></div>";
+            		items += "</div><div class='clear-left'></div>";
             	}
             });
 

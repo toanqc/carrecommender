@@ -12,6 +12,14 @@ body {
 	overflow: auto;
 }
 
+.clear-left {
+	clear: left;
+}
+
+.margin-left {
+	margin-left: 40px;
+}
+
 .header-container {
 	margin: 0 auto;
 	margin-top: 20px;
@@ -145,12 +153,16 @@ body {
 
 .search-result-img img {
 	width: 200px;
-	height: 130px;
-	margin-left: 30px;
+	height: 150px;
+}
+
+.word-wrap {
+	word-wrap: break-word;
+	width: 250px;
 }
 
 .search-result-text {
 	float: left;
-	margin-top: 25px;
+	margin-top: 20px;
 	margin-left: 20px;
 }
