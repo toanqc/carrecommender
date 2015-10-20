@@ -29,6 +29,7 @@ function checkLoginState() {
 	FB.getLoginStatus(function(response) {
 		statusChangeCallback(response);
 	});
+	window.location.reload();
 }
 
 window.fbAsyncInit = function() {
@@ -92,11 +93,11 @@ function loginSuccessful() {
 			contentType : "application/json; charset=utf-8",
 			data : JSON.stringify(user),
 			success : function(result) {
-				// do something.
 			},
 			error : function(result) {
 				// do something.
 			}
 		});
+		
 	});
 }
