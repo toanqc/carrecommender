@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,15 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import mum.bigdata.car.recommender.model.Car;
 import mum.bigdata.car.recommender.model.Make;
 import mum.bigdata.car.recommender.model.Model;
+import mum.bigdata.car.recommender.model.User;
 import mum.bigdata.car.recommender.service.CarService;
 import mum.bigdata.car.recommender.service.MakeService;
 import mum.bigdata.car.recommender.service.ModelService;
+import mum.bigdata.car.recommender.util.Recommender;
 
 @Controller
+@SessionAttributes({"user"})
 public class CarController {
 
 	@Autowired
@@ -76,6 +82,15 @@ public class CarController {
 		return carService.getCars(makeName, modelName, year);
 	}
 
+	@RequestMapping(value = "tracker")
+	public String trackSearch(@RequestParam("carid") String specimen, @ModelAttribute User user) {
+
+        Recommender rec = new Recommender(user.getId());
+		rec.trackSearch(specimen);
+		
+		return null;
+	}
+	
 	/*
 	 * private ArrayList<Integer> getRecommendations(int userId){ // TODO:
 	 * Retrieve the trace column in tracker table // TODO: convert result into

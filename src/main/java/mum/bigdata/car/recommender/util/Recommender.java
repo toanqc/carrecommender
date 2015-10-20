@@ -150,6 +150,18 @@ public class Recommender {
 		return sortedList;
 	}
 	
+	public void trackSearch(String specimenCarId){
+		try (Connection conn = cm.getConnection()) {
+			String sql = "INSERT INTO `tracker`(userid, cartrace) VALUES(?, ?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			statement.setString(2, specimenCarId);
+			statement.executeUpdate();	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}			
+	}
+	
 	public void showTracks(){
 		try (Connection conn = cm.getConnection()) {
 			String sql = "SELECT userid, cartrace FROM `tracker`";
