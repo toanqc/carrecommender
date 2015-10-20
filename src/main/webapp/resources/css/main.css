@@ -99,11 +99,15 @@ body {
 .search-container .search-box-container div .eg-make {
 	margin-left: -55px;
 	color: #fff;
+	-webkit-text-stroke-width: 0.2px;
+	-webkit-text-stroke-color: rgba(128, 128, 128, 0.5);
 }
 
 .search-container .search-box-container div .eg-model {
 	margin-left: -175px;
 	color: #fff;
+	-webkit-text-stroke-width: 0.2px;
+	-webkit-text-stroke-color: rgba(128, 128, 128, 0.5);
 }
 
 .search-container .search-box-container select {
@@ -141,6 +145,16 @@ body {
 }
 
 .search-result-container {
+	width: 980px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.result-header {
+	text-align: center;
+}
+
+.recommendation-container {
 	width: 980px;
 	margin: 0 auto;
 	margin-top: 10px;

@@ -29,9 +29,7 @@
 		</div>
 		<div class="background">
 			<div class="search-container">
-				<div class="header-text">
-					Find your dream car
-				</div>
+				<div class="header-text">Find your dream car</div>
 				<div class="type-search-container">
 					<ul>
 						<li>Buy</li>
@@ -70,12 +68,16 @@
 		</div>
 
 		<div class="search-result-container">
+			<div class="result-header" id="result"></div>
 			<div id="cars"></div>
 		</div>
-		
-		<div style="clear:both"></div>
-		<div class="recommendation-container" style="display:none">
-			<h3>Recommendations</h3>
+
+		<div style="clear: both"></div>
+
+		<div class="recommendation-container" style="display: none">
+			<div class="result-header">
+				<h2>Recommendations</h2>
+			</div>
 			<div id="recommendation"></div>
 		</div>
 	</div>

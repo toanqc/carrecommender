@@ -40,30 +40,35 @@ $( document ).ready(function() {
         var items = "";
        	var count = 0;
         $.getJSON("searchCar?make="+makeName+"&model="+modelName+"&year="+year, function (data) {
-            $.each(data, function (index, item) {
-            	count++;
-            	if (count % 2 != 0) {
-            		items += "<div>";
-            	}
-            	items += "<div class='search-result'>";
-            	items += "<div class='search-result-img";
-            	if (count % 2 == 0) {
-            		items += " margin-left";
-            	}
-            	items += "'><img src='" + item.photo + "'></div>";
-            	items += "<div class='search-result-text'>";
-            	items += "<div>" + item.make + " " + item.submodel + " " + item.year + "</div>";
-                items += "<div class='word-wrap'><a href=\"car?cid=" +item.cid+"\">" + item.name + "</a></div>";
-                items += "<div>Transmission: " + item.transmission + "</div>";
-            	items += "<div>Doors: " + item.doors + "</div>";
-            	items += "<div>MSRP: $" + item.msrp + "</div>";
-            	items += "<div>Rating: " + item.rating + "</div>";
-            	items += "<div>Cosumer Rating: " + item.consumerRating + "</div>";
-            	items += "</div></div>";
-            	if (count % 2 == 0) {
-            		items += "</div><div class='clear-left'></div>";
-            	}
-            });
+        	if (data.length != 0) {
+	            $.each(data, function (index, item) {
+	            	count++;
+	            	if (count % 2 != 0) {
+	            		items += "<div>";
+	            	}
+	            	items += "<div class='search-result'>";
+	            	items += "<div class='search-result-img";
+	            	if (count % 2 == 0) {
+	            		items += " margin-left";
+	            	}
+	            	items += "'><img src='" + item.photo + "'></div>";
+	            	items += "<div class='search-result-text'>";
+	            	items += "<div>" + item.make + " " + item.submodel + " " + item.year + "</div>";
+	                items += "<div class='word-wrap'><a href=\"car?cid=" +item.cid+"\">" + item.name + "</a></div>";
+	                items += "<div>Transmission: " + item.transmission + "</div>";
+	            	items += "<div>Doors: " + item.doors + "</div>";
+	            	items += "<div>MSRP: $" + item.msrp + "</div>";
+	            	items += "<div>Rating: " + item.rating + "</div>";
+	            	items += "<div>Cosumer Rating: " + item.consumerRating + "</div>";
+	            	items += "</div></div>";
+	            	if (count % 2 == 0) {
+	            		items += "</div><div class='clear-left'></div>";
+	            	}
+	            	$("#result").html("<h2>Result list</h2>");
+	            });
+        	} else {
+        		$("#result").html("<h2>No record found!</h2>");	
+        	}
 
             $("#cars").html(items);
         	$.getJSON("tracker?carid="+data[0].cid);
