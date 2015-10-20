@@ -27,15 +27,26 @@ body {
 	float: right;
 }
 
+.background {
+	width: 980px;
+	margin: 0 auto;
+	background-image: url("../img/normal.jpg");
+	background-repeat: no-repeat;
+}
+
 .search-container {
 	width: 70%;
 	margin: 0 auto;
-	margin-top: 165px;
+	padding-top: 165px;
+	padding-bottom: 165px;
 }
 
 .search-container .header-text {
 	font-size: 50px;
 	text-align: center;
+	color: #fff;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: rgba(128, 128, 128, 0.5);
 }
 
 .search-container .header-text sub {
@@ -46,6 +57,7 @@ body {
 .search-container .type-search-container {
 	text-align: center;
 	margin-top: 15px;
+	margin-left: -25px;
 }
 
 .search-container .type-search-container li {
@@ -54,15 +66,17 @@ body {
 	width: 150px;
 	height: 30px;
 	padding-top: 10px;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #fff;
 	font-size: 18px;
 	font-weight: 400;
+	background: rgba(128, 128, 128, 0.5);
+	color: #fff;
 }
 
 .search-container .type-search-container li:last-child {
-	border-right: 1px solid black;
+	border-right: 1px solid #fff;
 }
 
 .search-container .search-box-container {
@@ -76,10 +90,12 @@ body {
 
 .search-container .search-box-container div .eg-make {
 	margin-left: -55px;
+	color: #fff;
 }
 
 .search-container .search-box-container div .eg-model {
 	margin-left: -175px;
+	color: #fff;
 }
 
 .search-container .search-box-container select {
@@ -87,6 +103,7 @@ body {
 }
 
 .model-box {
+	
 }
 
 .model-box select {
@@ -99,15 +116,15 @@ body {
 }
 
 .search-container .button-container .go-button {
-	margin-top: -35px;
-	margin-left: 690px;
+	margin-top: -39px;
+	margin-left: 610px;
 }
 
 .search-container .button-container button {
 	font-size: 14px;
 	font-weight: 400;
-	width: 45px;
-	height: 40px;
+	width: 80px;
+	height: 30px;
 	border-radius: 5px;
 	border-style: none;
 	background: none repeat scroll 0 0 #0072BC;

@@ -25,42 +25,44 @@
 				<div id="status"></div>
 			</div>
 		</div>
-		<div class="search-container">
-			<div class="header-text">
-				Find your dream car <sub> &reg;</sub>
-			</div>
-			<div class="type-search-container">
-				<ul>
-					<li>Buy</li>
-					<li>Rent</li>
-				</ul>
-			</div>
-			<div class="search-box-container">
-				<div>
-					<select name="makes" id="makes">
-						<option value="" selected="selected">-- Select Make --</option>
-						<c:if test="${not empty makes}">
-							<c:forEach var="make" items="${makes}">
-								<option value="${make.id}">${make.name}</option>
-							</c:forEach>
-						</c:if>
-					</select> <br> <span class="eg-make">e.g. Nissan</span>
+		<div class="background">
+			<div class="search-container">
+				<div class="header-text">
+					Find your dream car
 				</div>
-				<div id="txtHint"></div>
-				<div class="model-box">
-					<select name="models" id="models">
-						<option value="">-- Select Model --</option>
-					</select> <br> <span class="eg-model">e.g. Maxima</span>
+				<div class="type-search-container">
+					<ul>
+						<li>Buy</li>
+						<li>Rent</li>
+					</ul>
 				</div>
-				<div>
-					<select name="years" id="years">
-						<option value="">-- Select Year --</option>
-					</select> <br>&nbsp;
+				<div class="search-box-container">
+					<div>
+						<select name="makes" id="makes">
+							<option value="" selected="selected">-- Select Make --</option>
+							<c:if test="${not empty makes}">
+								<c:forEach var="make" items="${makes}">
+									<option value="${make.id}">${make.name}</option>
+								</c:forEach>
+							</c:if>
+						</select> <br> <span class="eg-make">e.g. Nissan</span>
+					</div>
+					<div id="txtHint"></div>
+					<div class="model-box">
+						<select name="models" id="models">
+							<option value="">-- Select Model --</option>
+						</select> <br> <span class="eg-model">e.g. Maxima</span>
+					</div>
+					<div>
+						<select name="years" id="years">
+							<option value="">-- Select Year --</option>
+						</select> <br>&nbsp;
+					</div>
 				</div>
-			</div>
-			<div class="button-container">
-				<div class="go-button">
-					<button id="search">Go</button>
+				<div class="button-container">
+					<div class="go-button">
+						<button id="search">Go</button>
+					</div>
 				</div>
 			</div>
 		</div>
