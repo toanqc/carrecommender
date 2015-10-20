@@ -7,6 +7,8 @@
 <title>Car Recommender</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="resources/css/main.css" />" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" sizes="128x128"
+	type="image/png" href="<c:url value="/resources/img/favicon.png" />" />
 <script type="text/javascript"
 	src="<c:url value="resources/js/lib/jquery-1.11.3.min.js" />"></script>
 <script type="text/javascript"
