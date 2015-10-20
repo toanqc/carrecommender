@@ -61,7 +61,7 @@ public class CarRepositoryImpl extends RepositoryAbst<Car> implements CarReposit
             car.setSubmodel(rs.getString("car.submodel"));
             car.setMsrp(rs.getInt("car.msrp"));
             car.setRating(rs.getString("car.rating"));
-            car.setConsumer_rating(rs.getString("car.customer_rating"));
+            car.setConsumerRating(rs.getString("car.customer_rating"));
             car.setPhoto(rs.getString("car.photo"));            
             cars.add(car);
         }
