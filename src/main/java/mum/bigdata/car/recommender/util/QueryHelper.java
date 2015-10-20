@@ -3,6 +3,9 @@ package mum.bigdata.car.recommender.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+ * @author Mark Pit
+ */
 public class QueryHelper {
 	
     public static String formatToLikeQuery(ArrayList<String> set, String columnName){

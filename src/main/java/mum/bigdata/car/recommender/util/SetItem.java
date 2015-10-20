@@ -1,5 +1,8 @@
 package mum.bigdata.car.recommender.util;
 
+/*
+ * @author Mark Pit
+ */
 public class SetItem {
 	private String item;
 	private int count;
