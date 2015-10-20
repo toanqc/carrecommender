@@ -16,12 +16,12 @@ public class Car extends BaseModel{
     private String model;
     private int year;
     private String mpg;
-    private String tranmision;
+    private String transmission;
     private byte doors;
     private String submodel;
     private int msrp;
     private String rating;
-    private String consumer_rating;
+    private String consumerRating;
     private String photo;
 
     public long getCid() {
@@ -65,11 +65,11 @@ public class Car extends BaseModel{
     }
 
     public String getTranmision() {
-        return tranmision;
+        return transmission;
     }
 
     public void setTranmision(String tranmision) {
-        this.tranmision = tranmision;
+        this.transmission = tranmision;
     }
 
     public byte getDoors() {
@@ -104,12 +104,12 @@ public class Car extends BaseModel{
         this.rating = rating;
     }
 
-    public String getConsumer_rating() {
-        return consumer_rating;
+    public String getConsumerRating() {
+        return consumerRating;
     }
 
-    public void setConsumer_rating(String consumer_rating) {
-        this.consumer_rating = consumer_rating;
+    public void setConsumerRating(String consumerrating) {
+        this.consumerRating = consumerrating;
     }
 
     public String getPhoto() {
