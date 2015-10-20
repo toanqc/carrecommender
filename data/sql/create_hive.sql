@@ -24,7 +24,7 @@ DROP TABLE user_text;
 DROP TABLE year_text;
 
 
-CREATE TABLE car_text (cid bigint, name string, make string, model string, year int, mpg string, transmission string, doors tinyint, submodel string, msrp int, rating string, cusumer_rating string, photo string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+CREATE TABLE car_text (cid bigint, name string, make string, model string, year int, mpg string, transmission string, doors tinyint, submodel string, msrp int, rating string, customer_rating string, photo string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
 CREATE TABLE make_text (id bigint, name string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
 CREATE TABLE model_text (id bigint, make string, model string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
 CREATE TABLE tracker_text (id bigint, userid bigint, cartrace string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;

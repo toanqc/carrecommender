@@ -13,6 +13,8 @@ import mum.bigdata.car.recommender.model.Model;
  * @author Hiep
  */
 public interface ModelService {
-    public List<Model> getModels(long makeId);
-    public List<Model> getModels(String makeName);
+
+	public List<Model> getModels(long makeId);
+
+	public List<Model> getModels(String makeName);
 }

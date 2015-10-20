@@ -13,5 +13,5 @@ import mum.bigdata.car.recommender.model.Make;
  * @author Hiep
  */
 public interface MakeService {
-    public List<Make> getMakes();
+	public List<Make> getMakes();
 }

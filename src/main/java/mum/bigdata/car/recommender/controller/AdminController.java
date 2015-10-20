@@ -2,23 +2,18 @@ package mum.bigdata.car.recommender.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import org.springframework.ui.Model;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import mum.bigdata.car.recommender.model.Car;
 import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
-import mum.bigdata.car.recommender.util.Apriori;
-import mum.bigdata.car.recommender.util.QueryHelper;
-import mum.bigdata.car.recommender.util.SetItem;
 import mum.bigdata.car.recommender.util.Recommender;
 
 @Controller
