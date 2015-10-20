@@ -21,7 +21,7 @@ import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
  */
 public class Recommender {
 
-	private int minimumSupport = 3;
+	private int minimumSupport = 1;
 	private String userId;
 	private HiveConnectionManager cm = HiveConnectionManager.getInstance();
 	
@@ -209,6 +209,7 @@ public class Recommender {
 	public static void main(String[] args){
 		Recommender rec = new Recommender("1");
 		rec.showTracks();
+		rec.showUsers();
 	}
 	
 }
