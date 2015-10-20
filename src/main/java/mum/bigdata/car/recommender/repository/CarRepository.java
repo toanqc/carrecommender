@@ -14,7 +14,7 @@ import mum.bigdata.car.recommender.model.Car;
  */
 public interface CarRepository {
        
-    public Car getCar(long id);
+    public Car getCar(long cid);
     public List<Car> getCars(String make, String model, String year);
     
 }

@@ -24,8 +24,14 @@ import org.springframework.stereotype.Repository;
 public class CarRepositoryImpl extends RepositoryAbst<Car> implements CarRepository{
 
     @Override
-    public Car getCar(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Car getCar(long cid) {
+        String sql = String.format("select * from car where cid='%d'", cid);
+        try {
+            return this.get(sql).get(0);
+        } catch (SQLException ex) {
+            Logger.getLogger(MakeRepositoryImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     @Override

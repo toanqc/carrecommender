@@ -14,4 +14,5 @@ import mum.bigdata.car.recommender.model.Car;
  */
 public interface CarService {
     public List<Car> getCars(String make, String model, String year);
+    public Car getCar(long cid);
 }

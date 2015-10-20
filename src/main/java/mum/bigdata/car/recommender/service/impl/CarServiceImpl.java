@@ -26,5 +26,10 @@ public class CarServiceImpl implements CarService{
     public List<Car> getCars(String make, String model, String year) {
         return repository.getCars(make, model, year);
     }
+
+    @Override
+    public Car getCar(long cid) {
+        return repository.getCar(cid);
+    }
     
 }
