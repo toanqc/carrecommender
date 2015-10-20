@@ -72,6 +72,12 @@
 		<div class="search-result-container">
 			<div id="cars"></div>
 		</div>
+		
+		<div style="clear:both"></div>
+		<div class="recommendation-container" style="display:none">
+			<h3>Recommendations</h3>
+			<div id="recommendation"></div>
+		</div>
 	</div>
 </body>
 </html>
