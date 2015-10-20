@@ -102,7 +102,7 @@ public class CarController {
 	@RequestMapping(value = "recommendations")
 	public @ResponseBody List<Car> getRecommendations(@ModelAttribute User user) {
 		// If not logged in, no recommendations
-		if( user == null ){
+		if( user.getId() == null ){
 			return null;
 		}
 		

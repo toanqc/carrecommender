@@ -33,6 +33,8 @@ $( document ).ready(function() {
         });
     });
     
+    
+    
     $('#search').on('click', function () {
         var makeName = $( "#makes option:selected").text();
         var modelName = $( "#models option:selected").text();
@@ -73,38 +75,44 @@ $( document ).ready(function() {
             $("#cars").html(items);
             $.getJSON("tracker?carid="+data[0].cid);
         	
-        	$.getJSON("recommendations", function (data) {
-        		recitems = "";
-        		count = 0;
-                $.each(data, function (index, car) {
-                	
-	            	count++;
-	            	if (count % 2 != 0) {
-	            		recitems += "<div>";
-	            	}
-	            	recitems += "<div class='search-result'>";
-	            	recitems += "<div class='search-result-img";
-	            	if (count % 2 == 0) {
-	            		recitems += " margin-left";
-	            	}
-	            	recitems += "'><img src='" + car.photo + "'></div>";
-	            	recitems += "<div class='search-result-text'>";
-	            	recitems += "<div>" + car.make + " " + car.submodel + " " + car.year + "</div>";
-	            	recitems += "<div class='word-wrap'><a href=\"car?cid=" +car.cid+"\">" + car.name + "</a></div>";
-	            	recitems += "<div>Transmission: " + car.transmission + "</div>";
-	            	recitems += "<div>Doors: " + car.doors + "</div>";
-	            	recitems += "<div>MSRP: $" + car.msrp + "</div>";
-	            	recitems += "<div>Rating: " + car.rating + "</div>";
-	            	recitems += "<div>Cosumer Rating: " + car.consumerRating + "</div>";
-	            	recitems += "</div></div>";
-	            	if (count % 2 == 0) {
-	            		recitems += "</div><div class='clear-left'></div>";
-	            	}                	
-                });
-
-                $(".recommendation-container").show();
-                $("#recommendation").html(recitems);
-            });  
+        	getRecommendations(); 
         });
     });
+    
+    getRecommendations(); 
+    
+    function getRecommendations(){
+    	$.getJSON("recommendations", function (data) {
+    		recitems = "";
+    		count = 0;
+            $.each(data, function (index, car) {
+            	
+            	count++;
+            	if (count % 2 != 0) {
+            		recitems += "<div>";
+            	}
+            	recitems += "<div class='search-result'>";
+            	recitems += "<div class='search-result-img";
+            	if (count % 2 == 0) {
+            		recitems += " margin-left";
+            	}
+            	recitems += "'><img src='" + car.photo + "'></div>";
+            	recitems += "<div class='search-result-text'>";
+            	recitems += "<div>" + car.make + " " + car.submodel + " " + car.year + "</div>";
+            	recitems += "<div class='word-wrap'><a href=\"car?cid=" +car.cid+"\">" + car.name + "</a></div>";
+            	recitems += "<div>Transmission: " + car.transmission + "</div>";
+            	recitems += "<div>Doors: " + car.doors + "</div>";
+            	recitems += "<div>MSRP: $" + car.msrp + "</div>";
+            	recitems += "<div>Rating: " + car.rating + "</div>";
+            	recitems += "<div>Cosumer Rating: " + car.consumerRating + "</div>";
+            	recitems += "</div></div>";
+            	if (count % 2 == 0) {
+            		recitems += "</div><div class='clear-left'></div>";
+            	}                	
+            });
+
+            $(".recommendation-container").show();
+            $("#recommendation").html(recitems);
+        });     	
+    }
 });

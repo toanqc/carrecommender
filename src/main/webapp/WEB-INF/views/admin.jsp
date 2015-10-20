@@ -8,7 +8,7 @@
 </head>
 <body>
 	<p>For testing purposes </p>
-	<p>Input: userId (i.e. 10206909610532827, 1076887648990784), Output: recommendation list</p>
+	<p>Input: userId (i.e. 10206909610532827, 10153625538892856, 1076887648990784), Output: recommendation list</p>
 	
 	<form action="rec" method="POST">
 		<input name="userId" value=""/>
@@ -33,7 +33,7 @@
 	<hr>
 		
 	<p>
-		Enter user id (i.e. 10206909610532827, 1076887648990784) and car id (200703618, 200703609) to simulate user click.
+		Enter user id (i.e. 10206909610532827, 1076887648990784, 10153625538892856) and car id (200703618, 200703609) to simulate user click.
 	</p>
 	
 	<form action="carclick" method="POST">
