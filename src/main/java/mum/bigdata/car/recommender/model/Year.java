@@ -10,14 +10,14 @@ package mum.bigdata.car.recommender.model;
  * @author Hiep
  */
 public class Year {
-    private String year;
+	private String year;
 
-    public String getYear() {
-        return year;
-    }
+	public String getYear() {
+		return year;
+	}
 
-    public void setYear(String year) {
-        this.year = year;
-    }
-    
+	public void setYear(String year) {
+		this.year = year;
+	}
+
 }

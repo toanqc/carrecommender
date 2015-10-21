@@ -6,30 +6,32 @@
 package mum.bigdata.car.recommender.service.impl;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import mum.bigdata.car.recommender.model.Car;
 import mum.bigdata.car.recommender.repository.CarRepository;
 import mum.bigdata.car.recommender.service.CarService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Hiep
  */
 @Service
-public class CarServiceImpl implements CarService{
+public class CarServiceImpl implements CarService {
 
-    @Autowired
-    private CarRepository repository;
-    
-    @Override
-    public List<Car> getCars(String make, String model, String year) {
-        return repository.getCars(make, model, year);
-    }
+	@Autowired
+	private CarRepository repository;
 
-    @Override
-    public Car getCar(long cid) {
-        return repository.getCar(cid);
-    }
-    
+	@Override
+	public List<Car> getCars(String make, String model, String year) {
+		return repository.getCars(make, model, year);
+	}
+
+	@Override
+	public Car getCar(long cid) {
+		return repository.getCar(cid);
+	}
+
 }

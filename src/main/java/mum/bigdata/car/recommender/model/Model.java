@@ -9,23 +9,23 @@ package mum.bigdata.car.recommender.model;
  *
  * @author Hiep
  */
-public class Model extends BaseModel{
-    
-    private Make make;
+public class Model extends BaseModel {
 
-    public Model() {
-    }
+	private Make make;
 
-    public Model(long id, String name) {
-        super(id, name);
-    }
+	public Model() {
+	}
 
-    public Make getMake() {
-        return make;
-    }
+	public Model(long id, String name) {
+		super(id, name);
+	}
 
-    public void setMake(Make make) {
-        this.make = make;
-    }
-    
+	public Make getMake() {
+		return make;
+	}
+
+	public void setMake(Make make) {
+		this.make = make;
+	}
+
 }

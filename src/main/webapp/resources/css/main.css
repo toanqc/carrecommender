@@ -22,13 +22,20 @@ body {
 
 .header-container {
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: 5px;
 	width: 980px;
 	height: 50px;
 }
 
 .header-left {
 	float: left;
+}
+
+.header-left img {
+	margin-left: 30px;
+	margin-top: -5px;
+	width: 75pt;
+	border-radius: 20%;
 }
 
 .header-right {

@@ -6,6 +6,7 @@
 package mum.bigdata.car.recommender.repository;
 
 import java.util.List;
+
 import mum.bigdata.car.recommender.model.Car;
 
 /**
@@ -13,8 +14,9 @@ import mum.bigdata.car.recommender.model.Car;
  * @author Hiep
  */
 public interface CarRepository {
-       
-    public Car getCar(long cid);
-    public List<Car> getCars(String make, String model, String year);
-    
+
+	public Car getCar(long cid);
+
+	public List<Car> getCars(String make, String model, String year);
+
 }

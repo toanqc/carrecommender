@@ -9,115 +9,115 @@ package mum.bigdata.car.recommender.model;
  *
  * @author Hiep
  */
-public class Car extends BaseModel{
-    
-    private long cid;
-    private String make;
-    private String model;
-    private int year;
-    private String mpg;
-    private String transmission;
-    private byte doors;
-    private String submodel;
-    private int msrp;
-    private String rating;
-    private String consumerRating;
-    private String photo;
+public class Car extends BaseModel {
 
-    public long getCid() {
-        return cid;
-    }
+	private long cid;
+	private String make;
+	private String model;
+	private int year;
+	private String mpg;
+	private String transmission;
+	private byte doors;
+	private String submodel;
+	private int msrp;
+	private String rating;
+	private String consumerRating;
+	private String photo;
 
-    public void setCid(long cid) {
-        this.cid = cid;
-    }
+	public long getCid() {
+		return cid;
+	}
 
-    public String getMake() {
-        return make;
-    }
+	public void setCid(long cid) {
+		this.cid = cid;
+	}
 
-    public void setMake(String make) {
-        this.make = make;
-    }
+	public String getMake() {
+		return make;
+	}
 
-    public String getModel() {
-        return model;
-    }
+	public void setMake(String make) {
+		this.make = make;
+	}
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+	public String getModel() {
+		return model;
+	}
 
-    public int getYear() {
-        return year;
-    }
+	public void setModel(String model) {
+		this.model = model;
+	}
 
-    public void setYear(int year) {
-        this.year = year;
-    }
+	public int getYear() {
+		return year;
+	}
 
-    public String getMpg() {
-        return mpg;
-    }
+	public void setYear(int year) {
+		this.year = year;
+	}
 
-    public void setMpg(String mpg) {
-        this.mpg = mpg;
-    }
+	public String getMpg() {
+		return mpg;
+	}
 
-    public String getTransmission() {
-        return transmission;
-    }
+	public void setMpg(String mpg) {
+		this.mpg = mpg;
+	}
 
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
-    }
+	public String getTransmission() {
+		return transmission;
+	}
 
-    public byte getDoors() {
-        return doors;
-    }
+	public void setTransmission(String transmission) {
+		this.transmission = transmission;
+	}
 
-    public void setDoors(byte doors) {
-        this.doors = doors;
-    }
+	public byte getDoors() {
+		return doors;
+	}
 
-    public String getSubmodel() {
-        return submodel;
-    }
+	public void setDoors(byte doors) {
+		this.doors = doors;
+	}
 
-    public void setSubmodel(String submodel) {
-        this.submodel = submodel;
-    }
+	public String getSubmodel() {
+		return submodel;
+	}
 
-    public int getMsrp() {
-        return msrp;
-    }
+	public void setSubmodel(String submodel) {
+		this.submodel = submodel;
+	}
 
-    public void setMsrp(int msrp) {
-        this.msrp = msrp;
-    }
+	public int getMsrp() {
+		return msrp;
+	}
 
-    public String getRating() {
-        return rating;
-    }
+	public void setMsrp(int msrp) {
+		this.msrp = msrp;
+	}
 
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
+	public String getRating() {
+		return rating;
+	}
 
-    public String getConsumerRating() {
-        return consumerRating;
-    }
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
 
-    public void setConsumerRating(String consumerrating) {
-        this.consumerRating = consumerrating;
-    }
+	public String getConsumerRating() {
+		return consumerRating;
+	}
 
-    public String getPhoto() {
-        return photo;
-    }
+	public void setConsumerRating(String consumerrating) {
+		this.consumerRating = consumerrating;
+	}
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
 }

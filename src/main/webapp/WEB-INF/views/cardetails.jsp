@@ -19,7 +19,7 @@
 <body>
 	<div class="container">
 		<div class="header-container">
-			<div class="header-left">Logo!</div>
+			<div class="header-left">Car Recommender</div>
 			<div class="header-right">
 				<fb:login-button scope="public_profile,email" autologoutlink="true"
 					onlogin="checkLoginState();">
@@ -39,6 +39,7 @@
 				<div>MSRP: $${car.msrp}</div>
 				<div>Rating: ${car.rating}</div>
 				<div>Consumer Rating: ${car.consumerRating}</div>
+				<div><a href="https://www.youtube.com/results?search_query=${car.make}+${car.model}+${car.year}">Watch on YouTube</a></div>
 			</div>
 			
 			<input type="hidden" id="carid" value="${car.cid}" />
