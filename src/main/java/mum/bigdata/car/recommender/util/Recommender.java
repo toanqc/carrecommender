@@ -164,8 +164,13 @@ public class Recommender {
 					c.setName(rs.getString("name"));
 					c.setMake(rs.getString("make"));
 					c.setModel(rs.getString("model"));
+					c.setTransmission(rs.getString("transmission"));
+					c.setMsrp(rs.getInt("msrp"));
+					c.setDoors(rs.getByte("doors"));
 					c.setSubmodel(rs.getString("submodel"));
 					c.setYear(rs.getInt("year"));
+					c.setRating(rs.getString("rating"));
+					c.setConsumerRating(rs.getString("customer_rating"));
 					c.setPhoto(rs.getString("photo"));
 					carList.add(c);
 				}
