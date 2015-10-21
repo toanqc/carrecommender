@@ -12,26 +12,26 @@ import java.util.List;
  *
  * @author Hiep
  */
-public class Make extends BaseModel{
-    private final List<Model> models = new ArrayList<>();
+public class Make extends BaseModel {
+	private final List<Model> models = new ArrayList<>();
 
-    public Make() {
-    }
+	public Make() {
+	}
 
-    public Make(long id, String name) {
-        super(id, name);
-    }
-    
-    public void addModel(Model model){
-        this.models.add(model);
-    }
-    
-    public Model getModel(String modelName){
-        Model model = null;
-        for(Model _model:models){
-            if(_model.getName().equals(modelName))
-                model=_model;
-        }
-        return model;
-    }
+	public Make(long id, String name) {
+		super(id, name);
+	}
+
+	public void addModel(Model model) {
+		this.models.add(model);
+	}
+
+	public Model getModel(String modelName) {
+		Model model = null;
+		for (Model _model : models) {
+			if (_model.getName().equals(modelName))
+				model = _model;
+		}
+		return model;
+	}
 }
