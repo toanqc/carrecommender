@@ -19,7 +19,7 @@ import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
  */
 public class Recommender {
 
-	private int minimumSupport = 1;
+	private int minimumSupport = 2;
 	private int limit = 6;
 	private String userId;
 	private HiveConnectionManager cm = HiveConnectionManager.getInstance();
@@ -103,10 +103,15 @@ public class Recommender {
 			while (rs.next()) {
 				ids.add(String.valueOf(rs.getLong("userid")));
 			}
-
-			// Get traces from these users
-			query = "SELECT userid, cartrace FROM `tracker` WHERE " + QueryHelper.formatToINQuery(ids, "userid");
-					//+ " limit " + limit;
+			
+			if( ids.isEmpty() ){
+				// If no similar data, use own history
+ 				query = "SELECT userid, cartrace FROM `tracker` WHERE userid = '" + userId + "'";
+ 			} else { 
+ 				// Get traces from these users
+ 				query = "SELECT userid, cartrace FROM `tracker` WHERE " + QueryHelper.formatToINQuery(ids, "userid");
+ 						//+ " limit " + limit;
+ 			}			
 
 			// Debug
 			System.out.println("query: " + query);
