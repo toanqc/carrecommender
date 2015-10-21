@@ -19,7 +19,7 @@ import mum.bigdata.car.recommender.repository.util.HiveConnectionManager;
  */
 public class Recommender {
 
-	private int minimumSupport = 2;
+	private int minimumSupport = 1;
 	private int limit = 6;
 	private String userId;
 	private HiveConnectionManager cm = HiveConnectionManager.getInstance();
