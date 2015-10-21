@@ -105,8 +105,8 @@ public class Recommender {
 			}
 
 			// Get traces from these users
-			query = "SELECT userid, cartrace FROM `tracker` WHERE " + QueryHelper.formatToINQuery(ids, "userid")
-					+ " limit " + limit;
+			query = "SELECT userid, cartrace FROM `tracker` WHERE " + QueryHelper.formatToINQuery(ids, "userid");
+					//+ " limit " + limit;
 
 			// Debug
 			System.out.println("query: " + query);
@@ -176,9 +176,14 @@ public class Recommender {
 					if (c.getCid() == Long.parseLong(id) && !models.contains(model)) {
 						sortedList.add(c);
 						models.add(model);
+						
 						break;
 					}
-				}
+				}			
+
+				if(sortedList.size() == limit){
+					break;
+				} 
 			}
 
 		} catch (SQLException e) {
